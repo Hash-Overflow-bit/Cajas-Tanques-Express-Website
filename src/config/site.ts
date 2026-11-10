@@ -42,7 +42,7 @@ export const siteConfig: SiteConfig = {
     whatsappNumber: "16466529547",
     whatsappDisplay: "(646) 652-9547",
     email: "Cajasytanquesexpress@gmail.com",
-    address: "Servicio de recogida a domicilio",
+    address: "23 Saw Mill River Rd, Yonkers, NY 10701, United States",
     hours: "Monday to Friday: 8:00 AM - 6:00 PM · Saturday: 8:00 AM - 12:00 PM",
   },
   social: {

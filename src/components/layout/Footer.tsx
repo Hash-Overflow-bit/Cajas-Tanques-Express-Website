@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { PillButton } from "@/components/ui/PillButton";
-import { Phone, Mail, Facebook, Instagram, MessageCircle } from "lucide-react";
+import { Phone, Mail, Facebook, Instagram, MessageCircle, MapPin } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
@@ -80,6 +80,10 @@ export const Footer: React.FC = () => {
                 <Mail size={14} className="text-emerald-400" />
                 {siteConfig.contact.email}
               </a>
+            </div>
+            <div className="mt-3 flex items-center gap-1.5 text-xs text-white/60">
+              <MapPin size={14} className="text-emerald-400 flex-shrink-0" />
+              <span>{siteConfig.contact.address}</span>
             </div>
           </div>
 

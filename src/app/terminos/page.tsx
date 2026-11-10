@@ -134,7 +134,7 @@ export default function TerminosPage() {
               7. Canales de Consulta y Aclaraciones
             </h2>
             <p className="text-sm">
-              Si tiene dudas sobre las condiciones del servicio, puede comunicarse con nosotros por vía telefónica al <a href={`tel:${siteConfig.contact.phoneRaw}`} className="text-brand-900 font-bold">{siteConfig.contact.phoneDisplay}</a> o al <a href={`tel:${siteConfig.contact.phoneSecondaryRaw}`} className="text-brand-900 font-bold">{siteConfig.contact.phoneSecondaryDisplay}</a>, o por correo electrónico a <a href={`mailto:${siteConfig.contact.email}`} className="text-brand-900 font-bold">{siteConfig.contact.email}</a>.
+              Dirección: {siteConfig.contact.address}. Si tiene dudas sobre las condiciones del servicio, puede comunicarse con nosotros por vía telefónica al <a href={`tel:${siteConfig.contact.phoneRaw}`} className="text-brand-900 font-bold">{siteConfig.contact.phoneDisplay}</a> o al <a href={`tel:${siteConfig.contact.phoneSecondaryRaw}`} className="text-brand-900 font-bold">{siteConfig.contact.phoneSecondaryDisplay}</a>, o por correo electrónico a <a href={`mailto:${siteConfig.contact.email}`} className="text-brand-900 font-bold">{siteConfig.contact.email}</a>.
             </p>
           </div>
 

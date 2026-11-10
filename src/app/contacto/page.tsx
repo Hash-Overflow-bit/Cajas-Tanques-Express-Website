@@ -164,10 +164,10 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <span className="text-xs font-semibold text-neutral-500 uppercase tracking-wider block">
-                    Servicio
+                    Dirección
                   </span>
                   <span className="text-sm text-neutral-700 block">
-                    Recogida directa en su puerta con entrega en República Dominicana
+                    {siteConfig.contact.address}
                   </span>
                 </div>
               </div>

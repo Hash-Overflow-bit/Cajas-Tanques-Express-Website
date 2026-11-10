@@ -124,6 +124,7 @@ export default function PrivacidadPage() {
             </p>
             <div className="p-4 rounded-xl bg-canvas border border-neutral-200 text-sm">
               <p><strong>{siteConfig.name}</strong></p>
+              <p>Dirección: {siteConfig.contact.address}</p>
               <p>Correo de atención: <a href={`mailto:${siteConfig.contact.email}`} className="text-brand-900 font-semibold">{siteConfig.contact.email}</a></p>
               <p>Teléfono: <a href={`tel:${siteConfig.contact.phoneRaw}`} className="text-brand-900 font-semibold">{siteConfig.contact.phoneDisplay}</a> · <a href={`tel:${siteConfig.contact.phoneSecondaryRaw}`} className="text-brand-900 font-semibold">{siteConfig.contact.phoneSecondaryDisplay}</a></p>
               <p>Horario: {siteConfig.contact.hours}</p>
