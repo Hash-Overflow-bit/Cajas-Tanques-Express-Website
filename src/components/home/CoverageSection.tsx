@@ -10,6 +10,8 @@ interface NodeLocation {
   name: string;
   x: number; // percentage from left
   y: number; // percentage from top
+  mobileX: number;
+  mobileY: number;
   labelPos?: "top" | "bottom" | "left" | "right";
 }
 
@@ -17,28 +19,28 @@ export const CoverageSection: React.FC = () => {
   // Rich scattered destination points with generous distance, exactly like the reference image
   const locations: NodeLocation[] = [
     // Core Shipping Route Endpoints
-    { id: "usa", name: "USA", x: 38, y: 44, labelPos: "top" },
-    { id: "rd", name: "Rep. Dominicana", x: 68, y: 56, labelPos: "bottom" },
+    { id: "usa", name: "USA", x: 38, y: 44, mobileX: 31, mobileY: 43, labelPos: "top" },
+    { id: "rd", name: "Rep. Dominicana", x: 68, y: 56, mobileX: 76, mobileY: 52, labelPos: "bottom" },
 
     // Americas & Hubs
-    { id: "canada", name: "Canada", x: 22, y: 22, labelPos: "top" },
-    { id: "greenland", name: "Greenland", x: 52, y: 14, labelPos: "top" },
-    { id: "ny", name: "New York", x: 32, y: 32, labelPos: "top" },
-    { id: "miami", name: "Miami Hub", x: 27, y: 56, labelPos: "left" },
-    { id: "brazil", name: "Brazil", x: 50, y: 76, labelPos: "bottom" },
-    { id: "colombia", name: "Colombia", x: 42, y: 64, labelPos: "left" },
+    { id: "canada", name: "Canada", x: 22, y: 22, mobileX: 14, mobileY: 17, labelPos: "top" },
+    { id: "greenland", name: "Greenland", x: 52, y: 14, mobileX: 48, mobileY: 8, labelPos: "top" },
+    { id: "ny", name: "New York", x: 32, y: 32, mobileX: 25, mobileY: 29, labelPos: "top" },
+    { id: "miami", name: "Miami Hub", x: 27, y: 56, mobileX: 18, mobileY: 57, labelPos: "left" },
+    { id: "brazil", name: "Brazil", x: 50, y: 76, mobileX: 48, mobileY: 84, labelPos: "bottom" },
+    { id: "colombia", name: "Colombia", x: 42, y: 64, mobileX: 37, mobileY: 68, labelPos: "left" },
 
     // Dominican Republic Key Regions
-    { id: "santo-domingo", name: "Santo Domingo", x: 73, y: 46, labelPos: "top" },
-    { id: "santiago", name: "Santiago", x: 84, y: 36, labelPos: "top" },
-    { id: "puerto-plata", name: "Puerto Plata", x: 62, y: 34, labelPos: "top" },
-    { id: "punta-cana", name: "Punta Cana", x: 82, y: 68, labelPos: "right" },
+    { id: "santo-domingo", name: "Santo Domingo", x: 73, y: 46, mobileX: 72, mobileY: 40, labelPos: "top" },
+    { id: "santiago", name: "Santiago", x: 84, y: 36, mobileX: 88, mobileY: 31, labelPos: "top" },
+    { id: "puerto-plata", name: "Puerto Plata", x: 62, y: 34, mobileX: 61, mobileY: 27, labelPos: "top" },
+    { id: "punta-cana", name: "Punta Cana", x: 82, y: 68, mobileX: 91, mobileY: 65, labelPos: "right" },
 
     // Global / Diaspora Connections (from reference)
-    { id: "germany", name: "Germany", x: 74, y: 24, labelPos: "top" },
-    { id: "poland", name: "Poland", x: 89, y: 22, labelPos: "top" },
-    { id: "spain", name: "España", x: 66, y: 28, labelPos: "top" },
-    { id: "south-africa", name: "South Africa", x: 87, y: 58, labelPos: "bottom" },
+    { id: "germany", name: "Germany", x: 74, y: 24, mobileX: 73, mobileY: 12, labelPos: "top" },
+    { id: "poland", name: "Poland", x: 89, y: 22, mobileX: 91, mobileY: 13, labelPos: "top" },
+    { id: "spain", name: "España", x: 66, y: 28, mobileX: 62, mobileY: 18, labelPos: "top" },
+    { id: "south-africa", name: "South Africa", x: 87, y: 58, mobileX: 84, mobileY: 82, labelPos: "bottom" },
   ];
 
   // Exact coordinates for route line from USA to Dominican Republic
@@ -57,7 +59,7 @@ export const CoverageSection: React.FC = () => {
         <div className="relative rounded-[2.5rem] bg-[#2E6B34] text-white overflow-hidden shadow-2xl p-8 sm:p-14 lg:p-16 border border-emerald-800">
           
           {/* MAP CANVAS WITH CONTINENTS FORMED BY REAL DOT PATTERNS */}
-          <div className="relative w-full h-[440px] sm:h-[520px] lg:h-[600px]">
+            <div className="relative w-full h-[560px] sm:h-[520px] lg:h-[600px]">
             
             {/* SVG WORLD CONTINENT DOT-MATRIX LANDMASSES */}
             <svg
@@ -198,8 +200,13 @@ export const CoverageSection: React.FC = () => {
               return (
                 <div
                   key={loc.id}
-                  style={{ left: `${loc.x}%`, top: `${loc.y}%` }}
-                  className="absolute -translate-x-1/2 -translate-y-1/2 z-20 group flex flex-col items-center"
+                  style={{
+                    left: `${loc.x}%`,
+                    top: `${loc.y}%`,
+                    ["--mobile-x" as string]: `${loc.mobileX}%`,
+                    ["--mobile-y" as string]: `${loc.mobileY}%`,
+                  }}
+                  className="coverage-node absolute -translate-x-1/2 -translate-y-1/2 z-20 group flex flex-col items-center"
                 >
                   {/* Concentric Node Pin (Exact match to reference style: white disc with dark core) */}
                   <div className="relative flex items-center justify-center">
@@ -224,7 +231,7 @@ export const CoverageSection: React.FC = () => {
 
                   {/* Text Label Pill above or below */}
                   <span
-                    className={`text-[11px] sm:text-xs font-bold tracking-tight text-white whitespace-nowrap drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${
+                    className={`coverage-node-label text-[10px] sm:text-xs font-bold tracking-tight text-white whitespace-nowrap drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${
                       loc.labelPos === "top"
                         ? "order-first mb-1.5"
                         : "mt-1.5"

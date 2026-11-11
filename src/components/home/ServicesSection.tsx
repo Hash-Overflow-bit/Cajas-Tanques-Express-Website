@@ -36,8 +36,8 @@ export const ServicesSection: React.FC = () => {
             {/* Clean Pristine Image (No tags or badges in corners) */}
             <div className="relative w-full h-64 sm:h-72 overflow-hidden bg-neutral-100">
               <Image
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80"
-                alt="Cajas de cartón reforzado preparadas para envío a República Dominicana"
+                src="/boxes-shipment.jpg"
+                alt="Cajas empacadas y listas para envío a República Dominicana"
                 fill
                 sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
@@ -112,8 +112,8 @@ export const ServicesSection: React.FC = () => {
             {/* Clean Pristine Image (No tags or badges in corners) */}
             <div className="relative w-full h-64 sm:h-72 overflow-hidden bg-neutral-100">
               <Image
-                src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80"
-                alt="Tanques y barriles de transporte marítimo para República Dominicana"
+                src="/tanks-shipping.jpg"
+                alt="Cajas y tanques cargados en una camioneta para envío a República Dominicana"
                 fill
                 sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
@@ -237,6 +237,85 @@ export const ServicesSection: React.FC = () => {
                 <p className="font-bold mt-1">En camino a su destino</p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* PINTEREST-INSPIRED PHOTO GALLERY */}
+        <div className="mb-16 sm:mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-8">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-900">
+              Nuestro trabajo en acción
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 mt-2">
+              Carga real, cuidado real
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[210px] sm:auto-rows-[220px] gap-4">
+            <figure className="group relative sm:col-span-2 sm:row-span-2 overflow-hidden rounded-3xl bg-neutral-100">
+              <Image
+                src="/boxes-loading.jpg"
+                alt="Cajas y tanques preparados para ser cargados"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-5 pt-16 text-white font-semibold">
+                Preparación y carga de mercancía
+              </figcaption>
+            </figure>
+
+            <figure className="group relative lg:col-span-2 overflow-hidden rounded-3xl bg-neutral-100">
+              <Image
+                src="/storefront-delivery.jpg"
+                alt="Entrega de cajas y tanques frente al punto de servicio"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-5 pt-16 text-white font-semibold">
+                Recogida y entrega puerta a puerta
+              </figcaption>
+            </figure>
+
+            <figure className="group relative overflow-hidden rounded-3xl bg-neutral-100">
+              <Image
+                src="/tanks-shipping.jpg"
+                alt="Camioneta cargada con cajas y tanques"
+                fill
+                sizes="(max-width: 640px) 100vw, 25vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-4 pt-14 text-sm text-white font-semibold">
+                Carga protegida
+              </figcaption>
+            </figure>
+
+            <figure className="group relative overflow-hidden rounded-3xl bg-neutral-100">
+              <Image
+                src="/warehouse-van.jpg"
+                alt="Personal preparando cajas y tanques en el almacén"
+                fill
+                sizes="(max-width: 640px) 100vw, 25vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-4 pt-14 text-sm text-white font-semibold">
+                Equipo listo para servirle
+              </figcaption>
+            </figure>
+
+            <figure className="group relative sm:col-span-2 lg:col-span-2 overflow-hidden rounded-3xl bg-neutral-100">
+              <Image
+                src="/warehouse-packing.jpg"
+                alt="Cajas y tanques asegurados dentro de una camioneta"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-5 pt-16 text-white font-semibold">
+                Empaque y protección antes del traslado
+              </figcaption>
+            </figure>
           </div>
         </div>
 

@@ -55,6 +55,18 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+@media (max-width: 639px) {
+  .coverage-node {
+    left: var(--mobile-x) !important;
+    top: var(--mobile-y) !important;
+  }
+
+  .coverage-node-label {
+    font-size: 9px;
+    letter-spacing: -0.01em;
+  }
+}
+
 /* Smooth hero fade mask for photography */
 .hero-image-mask {
   mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
