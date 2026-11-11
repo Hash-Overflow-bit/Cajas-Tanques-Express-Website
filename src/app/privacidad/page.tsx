@@ -36,7 +36,7 @@ export default function PrivacidadPage() {
               1. Identidad del Responsable y Alcance
             </h2>
             <p>
-              En <strong>{siteConfig.name}</strong> nos tomamos muy en serio la confidencialidad y protección de los datos de nuestros clientes. Esta Política de Privacidad describe cómo recopilamos, utilizamos, almacenamos y salvaguardamos la información personal proporcionada al utilizar nuestro sitio web, programar servicios de recogida y coordinar envíos hacia la República Dominicana.
+              <strong>Cajas Y Tanques Express</strong> es el nombre comercial (DBA / trading name) operado por <strong>{siteConfig.legalBusinessName}</strong>. En nombre de esta empresa, nos tomamos muy en serio la confidencialidad y protección de los datos de nuestros clientes. Esta Política de Privacidad describe cómo recopilamos, utilizamos, almacenamos y salvaguardamos la información personal proporcionada al utilizar nuestro sitio web, programar servicios de recogida y coordinar envíos hacia la República Dominicana.
             </p>
           </div>
 
@@ -124,6 +124,7 @@ export default function PrivacidadPage() {
             </p>
             <div className="p-4 rounded-xl bg-canvas border border-neutral-200 text-sm">
               <p><strong>{siteConfig.name}</strong></p>
+              <p>Entidad legal operadora: {siteConfig.legalBusinessName}</p>
               <p>Dirección: {siteConfig.contact.address}</p>
               <p>Correo de atención: <a href={`mailto:${siteConfig.contact.email}`} className="text-brand-900 font-semibold">{siteConfig.contact.email}</a></p>
               <p>Teléfono: <a href={`tel:${siteConfig.contact.phoneRaw}`} className="text-brand-900 font-semibold">{siteConfig.contact.phoneDisplay}</a> · <a href={`tel:${siteConfig.contact.phoneSecondaryRaw}`} className="text-brand-900 font-semibold">{siteConfig.contact.phoneSecondaryDisplay}</a></p>

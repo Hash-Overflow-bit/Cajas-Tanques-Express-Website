@@ -37,7 +37,7 @@ export default function TerminosPage() {
               1. Aceptación de los Términos
             </h2>
             <p>
-              Al utilizar este sitio web, reservar una recogida en nuestro sistema o contratar los servicios de <strong>{siteConfig.name}</strong>, usted acepta quedar vinculado por los presentes Términos y Condiciones. Si no está de acuerdo con alguna parte de estas disposiciones, le solicitamos no utilizar nuestros servicios.
+              <strong>Cajas Y Tanques Express</strong> es el nombre comercial (DBA / trading name) operado por <strong>{siteConfig.legalBusinessName}</strong>. Al utilizar este sitio web, reservar una recogida en nuestro sistema o contratar los servicios de <strong>{siteConfig.name}</strong>, usted acepta quedar vinculado por los presentes Términos y Condiciones. Si no está de acuerdo con alguna parte de estas disposiciones, le solicitamos no utilizar nuestros servicios.
             </p>
           </div>
 
@@ -134,7 +134,7 @@ export default function TerminosPage() {
               7. Canales de Consulta y Aclaraciones
             </h2>
             <p className="text-sm">
-              Dirección: {siteConfig.contact.address}. Si tiene dudas sobre las condiciones del servicio, puede comunicarse con nosotros por vía telefónica al <a href={`tel:${siteConfig.contact.phoneRaw}`} className="text-brand-900 font-bold">{siteConfig.contact.phoneDisplay}</a> o al <a href={`tel:${siteConfig.contact.phoneSecondaryRaw}`} className="text-brand-900 font-bold">{siteConfig.contact.phoneSecondaryDisplay}</a>, o por correo electrónico a <a href={`mailto:${siteConfig.contact.email}`} className="text-brand-900 font-bold">{siteConfig.contact.email}</a>.
+              Entidad legal operadora: {siteConfig.legalBusinessName}. Dirección: {siteConfig.contact.address}. Si tiene dudas sobre las condiciones del servicio, puede comunicarse con nosotros por vía telefónica al <a href={`tel:${siteConfig.contact.phoneRaw}`} className="text-brand-900 font-bold">{siteConfig.contact.phoneDisplay}</a> o al <a href={`tel:${siteConfig.contact.phoneSecondaryRaw}`} className="text-brand-900 font-bold">{siteConfig.contact.phoneSecondaryDisplay}</a>, o por correo electrónico a <a href={`mailto:${siteConfig.contact.email}`} className="text-brand-900 font-bold">{siteConfig.contact.email}</a>.
             </p>
           </div>
 

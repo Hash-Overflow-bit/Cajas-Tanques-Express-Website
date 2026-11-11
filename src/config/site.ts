@@ -1,5 +1,6 @@
 export interface SiteConfig {
   name: string;
+  legalBusinessName: string;
   tagline: string;
   description: string;
   url: string;
@@ -29,6 +30,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: "CAJAS & TANQUES EXPRESS",
+  legalBusinessName: "Sebastian online store corp",
   tagline: "Envíos Confiables a República Dominicana",
   description:
     "Servicio profesional de recogida y transporte de cajas y tanques hacia toda la República Dominicana. Puntualidad garantizada y reserva en línea con solo $10 de depósito.",
