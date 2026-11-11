@@ -198,8 +198,8 @@ export const ServicesSection: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             <div className="group relative h-56 sm:h-64 overflow-hidden rounded-3xl bg-neutral-100 shadow-sm">
               <Image
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=85"
-                alt="Cajas de cartón listas para ser empacadas y protegidas"
+                src="/warehouse-boxes-tanks-v2.jpg"
+                alt="Cajas y tanques preparados en un almacén para envío"
                 fill
                 sizes="(max-width: 640px) 100vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

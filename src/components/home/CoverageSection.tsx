@@ -253,6 +253,9 @@ export const CoverageSection: React.FC = () => {
               <h3 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-[-0.03em] text-white leading-[1.08]">
                 Envíos y Recogidas Directas a República Dominicana
               </h3>
+              <p className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-white/75">
+                Recogemos sus cajas y tanques en todo Westchester County y Connecticut, con servicio puerta a puerta hacia la República Dominicana.
+              </p>
             </div>
 
             {/* Right Side: Capsule Action Button (Dark Pill with White Circle Arrow) */}
