@@ -38,8 +38,8 @@ export const MobileStickyBar: React.FC = () => {
         </a>
 
         <PillButton
-          href={siteConfig.acuityBookingUrl}
-          isExternal
+          href={siteConfig.bookingEntryUrl}
+          
           size="sm"
           variant="white"
           className="flex-grow justify-between text-xs py-2.5 font-bold"
