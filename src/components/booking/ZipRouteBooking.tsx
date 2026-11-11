@@ -21,7 +21,9 @@ export function ZipRouteBooking() {
       </h2>
       <p className="text-neutral-600 leading-relaxed mb-7">
         Cada zona tiene un día fijo de recogida. Identificaremos su ruta automáticamente
-        antes de mostrarle los horarios disponibles.
+        antes de mostrarle los horarios disponibles. Puede reservar durante el sábado
+        para una recogida el lunes, si quedan turnos disponibles; el sábado no se
+        considera un día de recogida regular.
       </p>
 
       <label htmlFor="pickup-zip" className="block text-sm font-bold text-neutral-900 mb-2">
