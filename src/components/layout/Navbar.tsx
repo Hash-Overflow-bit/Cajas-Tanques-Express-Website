@@ -43,8 +43,8 @@ export const Navbar: React.FC = () => {
           </div>
 
           <PillButton
-            href={siteConfig.acuityBookingUrl}
-            isExternal
+            href={siteConfig.bookingEntryUrl}
+            
             size="sm"
             variant="primary"
           >
@@ -55,8 +55,8 @@ export const Navbar: React.FC = () => {
         {/* Mobile menu trigger */}
         <div className="flex lg:hidden items-center gap-3">
           <PillButton
-            href={siteConfig.acuityBookingUrl}
-            isExternal
+            href={siteConfig.bookingEntryUrl}
+            
             size="sm"
             variant="primary"
           >
@@ -87,8 +87,8 @@ export const Navbar: React.FC = () => {
           ))}
           <div className="pt-3 border-t border-neutral-200 flex flex-col gap-2">
             <PillButton
-              href={siteConfig.acuityBookingUrl}
-              isExternal
+              href={siteConfig.bookingEntryUrl}
+              
               variant="primary"
               size="md"
               className="w-full justify-between"
