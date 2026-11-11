@@ -5,6 +5,7 @@ export interface SiteConfig {
   description: string;
   url: string;
   acuityBookingUrl: string;
+  bookingEntryUrl: string;
   contact: {
     phoneDisplay: string;
     phoneRaw: string;
@@ -36,6 +37,7 @@ export const siteConfig: SiteConfig = {
     "Servicio profesional de recogida y transporte de cajas y tanques hacia toda la República Dominicana. Puntualidad garantizada y reserva en línea con solo $10 de depósito.",
   url: "https://cajasytanquesexpress.com",
   acuityBookingUrl: "https://CajasYtanquesExpress.as.me/",
+  bookingEntryUrl: "/reservar",
   contact: {
     phoneDisplay: "(914) 510-7716",
     phoneRaw: "+19145107716",
