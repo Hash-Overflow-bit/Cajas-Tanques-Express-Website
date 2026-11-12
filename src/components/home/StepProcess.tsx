@@ -104,8 +104,8 @@ export const StepProcess: React.FC = () => {
         {/* Action Callout */}
         <div className="text-center">
           <PillButton
-            href={siteConfig.acuityBookingUrl}
-            isExternal
+            href={siteConfig.bookingEntryUrl}
+            
             size="lg"
             variant="primary"
             className="text-base sm:text-lg px-8 py-3.5 shadow-lg"

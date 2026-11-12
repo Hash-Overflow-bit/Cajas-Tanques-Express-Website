@@ -261,8 +261,8 @@ export const CoverageSection: React.FC = () => {
             {/* Right Side: Capsule Action Button (Dark Pill with White Circle Arrow) */}
             <div className="flex-shrink-0">
               <PillButton
-                href={siteConfig.acuityBookingUrl}
-                isExternal
+                href={siteConfig.bookingEntryUrl}
+                
                 size="lg"
                 variant="primary"
                 className="text-base px-8 py-4 shadow-2xl !bg-[#0D2E14] hover:!bg-[#071E0C] border border-white/20"

@@ -37,8 +37,8 @@ export const Footer: React.FC = () => {
 
             <div className="flex flex-wrap items-center gap-4">
               <PillButton
-                href={siteConfig.acuityBookingUrl}
-                isExternal
+                href={siteConfig.bookingEntryUrl}
+                
                 size="lg"
                 variant="white"
                 className="text-base font-bold px-8 py-3.5 shadow-xl"

@@ -89,8 +89,8 @@ export const ServicesSection: React.FC = () => {
                   </span>
                 </div>
                 <PillButton
-                  href={siteConfig.acuityBookingUrl}
-                  isExternal
+                  href={siteConfig.bookingEntryUrl}
+                  
                   variant="primary"
                   size="md"
                   className="w-full sm:w-auto"
@@ -165,8 +165,8 @@ export const ServicesSection: React.FC = () => {
                   </span>
                 </div>
                 <PillButton
-                  href={siteConfig.acuityBookingUrl}
-                  isExternal
+                  href={siteConfig.bookingEntryUrl}
+                  
                   variant="primary"
                   size="md"
                   className="w-full sm:w-auto"
