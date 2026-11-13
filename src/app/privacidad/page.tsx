@@ -4,30 +4,41 @@ import { siteConfig } from "@/config/site";
 import { ShieldCheck, Lock, Smartphone, FileText, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidad y Consentimiento SMS",
+  title: `Política de Privacidad y Consentimiento SMS | ${siteConfig.legalBusinessName}`,
   description:
     "Conozca cómo protegemos su información personal, el uso de datos en reservas de recogida y el consentimiento de comunicaciones por SMS.",
 };
 
 export default function PrivacidadPage() {
   return (
-    <div className="pt-32 sm:pt-40 pb-16 sm:pb-20 bg-canvas">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="text-center mb-12">
-          <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-900 bg-brand-100/70 px-3.5 py-1.5 rounded-full inline-block mb-3">
-            Transparencia y Seguridad
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-neutral-900 tracking-tight mb-4">
-            Política de Privacidad
-          </h1>
-          <p className="text-sm sm:text-base text-neutral-600">
-            Última actualización: Noviembre de 2026 • {siteConfig.name}
-          </p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-b from-blue-50/60 via-canvas to-canvas px-4 pb-20 pt-28 sm:px-6 sm:pt-36 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-14">
+        <aside className="h-fit rounded-2xl border border-blue-100 bg-white/80 p-5 shadow-sm backdrop-blur-sm lg:sticky lg:top-28">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-900">Documento legal</p>
+          <p className="mt-3 text-lg font-bold leading-tight text-neutral-900">Privacidad y comunicaciones</p>
+          <div className="mt-6 space-y-3 border-t border-neutral-200 pt-5 text-sm text-neutral-600">
+            <p><span className="font-semibold text-neutral-900">Entidad legal</span><br />{siteConfig.legalBusinessName}</p>
+            <p><span className="font-semibold text-neutral-900">Actualizado</span><br />Noviembre de 2026</p>
+          </div>
+          <div className="mt-6 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 p-4 text-sm leading-relaxed text-blue-950">
+            Protegemos sus datos con medidas de seguridad y prácticas de uso responsable.
+          </div>
+        </aside>
 
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-neutral-200/90 shadow-sm space-y-8 text-neutral-700 text-sm sm:text-base leading-relaxed">
+        <main className="min-w-0">
+          <div className="mb-8 max-w-4xl">
+            <span className="mb-3 inline-block rounded-full bg-brand-100/70 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-900 sm:text-sm">
+              Transparencia y Seguridad
+            </span>
+            <h1 className="text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-6xl">
+              Política de Privacidad
+            </h1>
+            <p className="mt-4 text-sm text-neutral-600 sm:text-base">
+              Cómo recopilamos, utilizamos y protegemos su información personal.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-neutral-200/90 bg-white p-6 shadow-xl shadow-blue-950/[0.04] sm:p-10 lg:p-14 space-y-12 text-neutral-700 text-sm sm:text-base leading-relaxed">
           
           {/* Section 1 */}
           <div>
@@ -36,7 +47,7 @@ export default function PrivacidadPage() {
               1. Identidad del Responsable y Alcance
             </h2>
             <p>
-              <strong>Cajas Y Tanques Express</strong> es el nombre comercial (DBA / trading name) operado por <strong>{siteConfig.legalBusinessName}</strong>. En nombre de esta empresa, nos tomamos muy en serio la confidencialidad y protección de los datos de nuestros clientes. Esta Política de Privacidad describe cómo recopilamos, utilizamos, almacenamos y salvaguardamos la información personal proporcionada al utilizar nuestro sitio web, programar servicios de recogida y coordinar envíos hacia la República Dominicana.
+              <strong>{siteConfig.name}</strong> es el nombre comercial (DBA / trading name) de <strong>{siteConfig.legalBusinessName}</strong>. Esta Política de Privacidad se emite en nombre de la entidad legal y describe cómo recopilamos, utilizamos, almacenamos y salvaguardamos la información personal proporcionada al utilizar nuestro sitio web, programar servicios de recogida y coordinar envíos hacia la República Dominicana.
             </p>
           </div>
 
@@ -132,8 +143,8 @@ export default function PrivacidadPage() {
             </div>
           </div>
 
-        </div>
-
+          </div>
+        </main>
       </div>
     </div>
   );

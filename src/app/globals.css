@@ -49,10 +49,10 @@ body {
 }
 
 .glass-dark {
-  background: rgba(11, 59, 36, 0.85);
+  background: rgba(11, 45, 102, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(147, 197, 253, 0.28);
 }
 
 @media (max-width: 639px) {

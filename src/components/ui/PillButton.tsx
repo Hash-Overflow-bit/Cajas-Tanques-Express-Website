@@ -39,13 +39,13 @@ export const PillButton: React.FC<PillButtonProps> = ({
 
   const variantClasses = {
     primary:
-      "bg-brand-900 text-white hover:bg-brand-950 shadow-pill transition-all duration-300 group",
+      "bg-gradient-to-r from-brand-900 via-blue-700 to-cyan-600 text-white hover:from-brand-950 hover:via-blue-800 hover:to-cyan-700 shadow-pill transition-all duration-300 group",
     secondary:
       "bg-transparent border border-neutral-300 text-neutral-800 hover:border-brand-900 hover:text-brand-900 transition-all duration-300 group",
     white:
       "bg-white text-brand-900 hover:bg-neutral-100 shadow-md transition-all duration-300 group",
     whatsapp:
-      "bg-[#25D366] text-white hover:bg-[#1EBE5B] shadow-pill transition-all duration-300 group",
+      "bg-gradient-to-r from-blue-700 to-cyan-600 text-white hover:from-blue-800 hover:to-cyan-700 shadow-pill transition-all duration-300 group",
   }[variant];
 
   const badgeVariantClasses = {
@@ -56,7 +56,7 @@ export const PillButton: React.FC<PillButtonProps> = ({
     white:
       "bg-brand-900 text-white group-hover:translate-x-0.5 transition-transform duration-300",
     whatsapp:
-      "bg-white text-[#25D366] group-hover:translate-x-0.5 transition-transform duration-300",
+      "bg-white text-[#2563eb] group-hover:translate-x-0.5 transition-transform duration-300",
   }[variant];
 
   const content = (

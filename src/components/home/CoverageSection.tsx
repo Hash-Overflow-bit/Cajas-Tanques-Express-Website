@@ -56,7 +56,7 @@ export const CoverageSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* GREEN CANVAS MAP CONTAINER */}
-        <div className="relative rounded-[2.5rem] bg-[#2E6B34] text-white overflow-hidden shadow-2xl p-8 sm:p-14 lg:p-16 border border-emerald-800">
+        <div className="relative rounded-[2.5rem] bg-gradient-to-br from-[#0b2e63] via-[#123c78] to-[#0b3b85] text-white overflow-hidden shadow-2xl p-8 sm:p-14 lg:p-16 border border-blue-800">
           
           {/* MAP CANVAS WITH CONTINENTS FORMED BY REAL DOT PATTERNS */}
             <div className="relative w-full h-[560px] sm:h-[520px] lg:h-[600px]">
@@ -71,14 +71,14 @@ export const CoverageSection: React.FC = () => {
               <defs>
                 {/* Regular Dot Matrix */}
                 <pattern id="continentDots" width="14" height="14" patternUnits="userSpaceOnUse">
-                  <circle cx="7" cy="7" r="1.5" fill="#A4D8A9" opacity="0.6" />
+                  <circle cx="7" cy="7" r="1.5" fill="#91c8f5" opacity="0.6" />
                 </pattern>
                 {/* Dense Radial Dot Matrix (Reference Style Concentric Dots) */}
                 <pattern id="continentDotsDense" width="10" height="10" patternUnits="userSpaceOnUse">
-                  <circle cx="5" cy="5" r="1.4" fill="#C2ECC6" opacity="0.85" />
+                  <circle cx="5" cy="5" r="1.4" fill="#b9e2ff" opacity="0.85" />
                 </pattern>
                 <pattern id="continentDotsFine" width="8" height="8" patternUnits="userSpaceOnUse">
-                  <circle cx="4" cy="4" r="1.1" fill="#E2F7E4" opacity="0.9" />
+                  <circle cx="4" cy="4" r="1.1" fill="#dff4ff" opacity="0.9" />
                 </pattern>
               </defs>
 
@@ -189,7 +189,7 @@ export const CoverageSection: React.FC = () => {
               style={{ left: `${midX}%`, top: `${midY}%` }}
               className="absolute -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#143B1A] border-2 border-white/90 text-white flex items-center justify-center shadow-2xl ring-4 ring-black/20">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#123d79] border-2 border-white/90 text-white flex items-center justify-center shadow-2xl ring-4 ring-black/20">
                 <Plane size={22} className="rotate-45 text-white" strokeWidth={2.4} />
               </div>
             </div>
@@ -222,8 +222,8 @@ export const CoverageSection: React.FC = () => {
                       <span
                         className={`rounded-full ${
                           isMainRoute
-                            ? "w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#164322]"
-                            : "w-2 h-2 sm:w-2.5 sm:h-2.5 bg-[#164322]"
+                            ? "w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#184a8c]"
+                            : "w-2 h-2 sm:w-2.5 sm:h-2.5 bg-[#184a8c]"
                         }`}
                       />
                     </div>
@@ -265,7 +265,7 @@ export const CoverageSection: React.FC = () => {
                 
                 size="lg"
                 variant="primary"
-                className="text-base px-8 py-4 shadow-2xl !bg-[#0D2E14] hover:!bg-[#071E0C] border border-white/20"
+                className="text-base px-8 py-4 shadow-2xl !bg-[#0c2d61] hover:!bg-[#081d45] border border-white/20"
               >
                 Reservar Recogida
               </PillButton>

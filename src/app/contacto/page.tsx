@@ -106,7 +106,7 @@ export default function ContactoPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#25D366]/10 text-[#25D366] flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-[#2563eb]/10 text-[#2563eb] flex items-center justify-center flex-shrink-0">
                   <MessageSquare size={22} />
                 </div>
                 <div>
@@ -117,7 +117,7 @@ export default function ContactoPage() {
                     href={`https://wa.me/${siteConfig.contact.whatsappNumber}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-lg font-bold text-neutral-900 hover:text-[#25D366] transition-colors"
+                    className="text-lg font-bold text-neutral-900 hover:text-[#2563eb] transition-colors"
                   >
                     {siteConfig.contact.whatsappDisplay}
                   </a>
@@ -205,20 +205,20 @@ export default function ContactoPage() {
             </p>
 
             {submitted ? (
-              <div className="p-8 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
-                <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto mb-4">
+              <div className="p-8 rounded-2xl bg-blue-50 border border-blue-200 text-center">
+                <div className="w-14 h-14 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center mx-auto mb-4">
                   <CheckCircle2 size={32} />
                 </div>
-                <h3 className="text-xl font-bold text-emerald-950 mb-2">
+                <h3 className="text-xl font-bold text-blue-950 mb-2">
                   ¡Mensaje Recibido!
                 </h3>
-                <p className="text-sm text-emerald-800 max-w-md mx-auto mb-6">
+                <p className="text-sm text-blue-800 max-w-md mx-auto mb-6">
                   Muchas gracias por contactarnos. Nuestro equipo revisará su mensaje y se comunicará con usted en el horario hábil.
                 </p>
                 <button
                   type="button"
                   onClick={() => setSubmitted(false)}
-                  className="text-xs font-bold text-emerald-900 underline uppercase tracking-wider"
+                  className="text-xs font-bold text-blue-900 underline uppercase tracking-wider"
                 >
                   Enviar otro mensaje
                 </button>

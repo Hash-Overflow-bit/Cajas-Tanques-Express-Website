@@ -11,14 +11,14 @@ export const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-canvas py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
       {/* MONUMENTAL FOOTER CARD CONTAINER */}
-      <div className="max-w-7xl mx-auto rounded-[2.5rem] sm:rounded-[3rem] bg-[#0C2216] text-[#EFECE6] overflow-hidden shadow-2xl p-8 sm:p-14 lg:p-16 border border-emerald-950 flex flex-col justify-between">
+      <div className="max-w-7xl mx-auto rounded-[2.5rem] sm:rounded-[3rem] bg-gradient-to-br from-[#071a3c] via-[#0b2d66] to-[#061f4f] text-[#EFECE6] overflow-hidden shadow-2xl p-8 sm:p-14 lg:p-16 border border-blue-950 flex flex-col justify-between">
         
         {/* TOP SECTION: ASYMMETRIC GRID (Headline & CTA on Left, Social & Nav on Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start mb-16 sm:mb-20">
           
           {/* Top Left: Call To Action */}
           <div className="lg:col-span-6 flex flex-col items-start">
-            <span className="text-xs sm:text-sm font-semibold tracking-wider text-[#34D399] uppercase mb-3">
+            <span className="text-xs sm:text-sm font-semibold tracking-wider text-[#67e8f9] uppercase mb-3">
               ¿Listo para enviar a República Dominicana?
             </span>
             <div className="flex items-center gap-4 sm:gap-6 mb-6">
@@ -62,14 +62,14 @@ export const Footer: React.FC = () => {
                 href={`tel:${siteConfig.contact.phoneRaw}`}
                 className="hover:text-white transition-colors flex items-center gap-1.5"
               >
-                <Phone size={14} className="text-emerald-400" />
+                <Phone size={14} className="text-cyan-400" />
                 {siteConfig.contact.phoneDisplay}
               </a>
               <a
                 href={`tel:${siteConfig.contact.phoneSecondaryRaw}`}
                 className="hover:text-white transition-colors flex items-center gap-1.5"
               >
-                <Phone size={14} className="text-emerald-400" />
+                <Phone size={14} className="text-cyan-400" />
                 {siteConfig.contact.phoneSecondaryDisplay}
               </a>
               <span>•</span>
@@ -77,12 +77,12 @@ export const Footer: React.FC = () => {
                 href={`mailto:${siteConfig.contact.email}`}
                 className="hover:text-white transition-colors flex items-center gap-1.5"
               >
-                <Mail size={14} className="text-emerald-400" />
+                <Mail size={14} className="text-cyan-400" />
                 {siteConfig.contact.email}
               </a>
             </div>
             <div className="mt-3 flex items-center gap-1.5 text-xs text-white/60">
-              <MapPin size={14} className="text-emerald-400 flex-shrink-0" />
+              <MapPin size={14} className="text-cyan-400 flex-shrink-0" />
               <span>{siteConfig.contact.address}</span>
             </div>
           </div>
@@ -96,7 +96,7 @@ export const Footer: React.FC = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-emerald-300 transition-all flex items-center justify-center text-white"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-cyan-300 transition-all flex items-center justify-center text-white"
                 aria-label="Facebook"
               >
                 <Facebook size={18} />
@@ -105,7 +105,7 @@ export const Footer: React.FC = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-emerald-300 transition-all flex items-center justify-center text-white"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-cyan-300 transition-all flex items-center justify-center text-white"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
@@ -114,14 +114,14 @@ export const Footer: React.FC = () => {
                 href={`https://wa.me/${siteConfig.contact.whatsappNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-emerald-300 transition-all flex items-center justify-center text-white"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-cyan-300 transition-all flex items-center justify-center text-white"
                 aria-label="WhatsApp"
               >
                 <MessageCircle size={18} />
               </a>
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-emerald-300 transition-all flex items-center justify-center text-white"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-cyan-300 transition-all flex items-center justify-center text-white"
                 aria-label="Llamar por teléfono"
               >
                 <Phone size={18} />
@@ -166,16 +166,16 @@ export const Footer: React.FC = () => {
         {/* BOTTOM SECTION: PROPERLY ALIGNED CREDITS & LEGAL BAR */}
         <div className="pt-8 mt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/55">
           <div>
-            &copy; {new Date().getFullYear()} {siteConfig.name}
+            &copy; {new Date().getFullYear()} {siteConfig.legalBusinessName} · {siteConfig.name}
           </div>
 
           <div className="flex items-center gap-6">
             <Link href="/privacidad" className="hover:text-white underline underline-offset-2 transition-colors">
-              Privacy policy
+              Política de Privacidad
             </Link>
             <span>•</span>
             <Link href="/terminos" className="hover:text-white underline underline-offset-2 transition-colors">
-              Terms
+              Términos y Condiciones
             </Link>
           </div>
 
@@ -184,7 +184,7 @@ export const Footer: React.FC = () => {
               href="https://www.upwork.com/freelancers/~018cb6b2be97dd2433?mp_source=share"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-emerald-300/85 hover:text-emerald-300 hover:underline underline-offset-2 transition-colors font-medium"
+              className="text-cyan-300/85 hover:text-cyan-300 hover:underline underline-offset-2 transition-colors font-medium"
             >
               Developed by Hashir
             </a>

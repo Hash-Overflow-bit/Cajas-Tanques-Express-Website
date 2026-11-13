@@ -94,7 +94,7 @@ export const StepProcess: React.FC = () => {
 
                 <div className="pt-4 border-t border-neutral-200/60 flex items-center justify-between text-xs font-semibold text-brand-900">
                   <span>Paso Verificado</span>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span className="w-2 h-2 rounded-full bg-cyan-500" />
                 </div>
               </motion.div>
             );

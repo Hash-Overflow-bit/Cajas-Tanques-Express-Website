@@ -78,10 +78,10 @@ export const HomeFAQ: React.FC = () => {
                 
                 {/* Realistic Corrugated Shipping Container */}
                 <div
-                  className="relative rounded-2xl overflow-hidden shadow-2xl p-8 sm:p-10 text-center text-white border-2 border-emerald-700/80"
+                  className="relative rounded-2xl overflow-hidden shadow-2xl p-8 sm:p-10 text-center text-white border-2 border-blue-700/80"
                   style={{
                     background:
-                      "repeating-linear-gradient(90deg, #185A2E 0px, #185A2E 12px, #134B26 12px, #134B26 24px)",
+                      "repeating-linear-gradient(90deg, #1554a0 0px, #1554a0 12px, #0e3f7f 12px, #0e3f7f 24px)",
                   }}
                 >
                   {/* Container vertical stencil serial number on the right (like XRT11G1K 4K72) */}

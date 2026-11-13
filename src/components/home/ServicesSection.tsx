@@ -64,15 +64,15 @@ export const ServicesSection: React.FC = () => {
                 {/* Features List */}
                 <div className="space-y-3 mb-8">
                   <div className="flex items-start gap-3 text-sm text-neutral-700">
-                    <CheckCircle2 size={18} className="text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
                     <span>Cartón corrugado de alta resistencia contra impactos y apilamiento</span>
                   </div>
                   <div className="flex items-start gap-3 text-sm text-neutral-700">
-                    <CheckCircle2 size={18} className="text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
                     <span>Recogida a domicilio en la fecha y franja horaria programada</span>
                   </div>
                   <div className="flex items-start gap-3 text-sm text-neutral-700">
-                    <CheckCircle2 size={18} className="text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
                     <span>Entrega puerta a puerta con comprobante de recepción en República Dominicana</span>
                   </div>
                 </div>
@@ -140,15 +140,15 @@ export const ServicesSection: React.FC = () => {
                 {/* Features List */}
                 <div className="space-y-3 mb-8">
                   <div className="flex items-start gap-3 text-sm text-neutral-700">
-                    <CheckCircle2 size={18} className="text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
                     <span>Polietileno de alta resistencia contra golpes y peso extremo</span>
                   </div>
                   <div className="flex items-start gap-3 text-sm text-neutral-700">
-                    <CheckCircle2 size={18} className="text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
                     <span>Cierre hermético con aro metálico y opción de precinto o candado</span>
                   </div>
                   <div className="flex items-start gap-3 text-sm text-neutral-700">
-                    <CheckCircle2 size={18} className="text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
                     <span>Distribución directa a todas las provincias y municipios de RD</span>
                   </div>
                 </div>

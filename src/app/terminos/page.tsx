@@ -5,30 +5,41 @@ import { siteConfig } from "@/config/site";
 import { FileText, DollarSign, Clock, ShieldAlert, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Términos y Condiciones del Servicio",
+  title: `Términos y Condiciones del Servicio | ${siteConfig.legalBusinessName}`,
   description:
     "Términos del servicio de recogida, política del depósito de $10, cancelaciones, responsabilidades de embalaje y condiciones de envío a República Dominicana.",
 };
 
 export default function TerminosPage() {
   return (
-    <div className="pt-32 sm:pt-40 pb-16 sm:pb-20 bg-canvas">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="text-center mb-12">
-          <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-900 bg-brand-100/70 px-3.5 py-1.5 rounded-full inline-block mb-3">
-            Condiciones del Servicio
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-neutral-900 tracking-tight mb-4">
-            Términos y Condiciones
-          </h1>
-          <p className="text-sm sm:text-base text-neutral-600">
-            Última actualización: Noviembre de 2026 • {siteConfig.name}
-          </p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-b from-blue-50/60 via-canvas to-canvas px-4 pb-20 pt-28 sm:px-6 sm:pt-36 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-14">
+        <aside className="h-fit rounded-2xl border border-blue-100 bg-white/80 p-5 shadow-sm backdrop-blur-sm lg:sticky lg:top-28">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-900">Documento legal</p>
+          <p className="mt-3 text-lg font-bold leading-tight text-neutral-900">Condiciones del servicio</p>
+          <div className="mt-6 space-y-3 border-t border-neutral-200 pt-5 text-sm text-neutral-600">
+            <p><span className="font-semibold text-neutral-900">Entidad legal</span><br />{siteConfig.legalBusinessName}</p>
+            <p><span className="font-semibold text-neutral-900">Actualizado</span><br />Noviembre de 2026</p>
+          </div>
+          <div className="mt-6 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 p-4 text-sm leading-relaxed text-blue-950">
+            Revise estas condiciones antes de reservar una recogida o contratar el servicio.
+          </div>
+        </aside>
 
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-neutral-200/90 shadow-sm space-y-8 text-neutral-700 text-sm sm:text-base leading-relaxed">
+        <main className="min-w-0">
+          <div className="mb-8 max-w-4xl">
+            <span className="mb-3 inline-block rounded-full bg-brand-100/70 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-900 sm:text-sm">
+              Condiciones del Servicio
+            </span>
+            <h1 className="text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-6xl">
+              Términos y Condiciones
+            </h1>
+            <p className="mt-4 text-sm text-neutral-600 sm:text-base">
+              Reglas claras para reservas, recogidas, pagos y envíos internacionales.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-neutral-200/90 bg-white p-6 shadow-xl shadow-blue-950/[0.04] sm:p-10 lg:p-14 space-y-12 text-neutral-700 text-sm sm:text-base leading-relaxed">
           
           {/* Section 1 */}
           <div>
@@ -37,7 +48,7 @@ export default function TerminosPage() {
               1. Aceptación de los Términos
             </h2>
             <p>
-              <strong>Cajas Y Tanques Express</strong> es el nombre comercial (DBA / trading name) operado por <strong>{siteConfig.legalBusinessName}</strong>. Al utilizar este sitio web, reservar una recogida en nuestro sistema o contratar los servicios de <strong>{siteConfig.name}</strong>, usted acepta quedar vinculado por los presentes Términos y Condiciones. Si no está de acuerdo con alguna parte de estas disposiciones, le solicitamos no utilizar nuestros servicios.
+              <strong>{siteConfig.name}</strong> es el nombre comercial (DBA / trading name) de <strong>{siteConfig.legalBusinessName}</strong>. Al utilizar este sitio web, reservar una recogida en nuestro sistema o contratar los servicios ofrecidos bajo el nombre comercial <strong>{siteConfig.name}</strong>, usted acepta quedar vinculado por los presentes Términos y Condiciones. Si no está de acuerdo con alguna parte de estas disposiciones, le solicitamos no utilizar nuestros servicios.
             </p>
           </div>
 
@@ -138,8 +149,8 @@ export default function TerminosPage() {
             </p>
           </div>
 
-        </div>
-
+          </div>
+        </main>
       </div>
     </div>
   );

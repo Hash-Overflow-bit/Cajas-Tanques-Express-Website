@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     "shipping to dominican republic",
     "envios puerta a puerta rd",
   ],
-  authors: [{ name: siteConfig.name }],
-  creator: siteConfig.name,
+  authors: [{ name: siteConfig.legalBusinessName }],
+  creator: siteConfig.legalBusinessName,
   icons: {
     icon: "/cajas-tanques-express-logo-transparent.png",
     shortcut: "/cajas-tanques-express-logo-transparent.png",

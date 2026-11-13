@@ -90,7 +90,7 @@ export default function ServiciosPage() {
                   </div>
                   <div className="flex justify-between py-2 border-b border-neutral-200/60">
                     <span>Aplicación:</span>
-                    <span className="text-emerald-700 font-medium">100% al costo final</span>
+                    <span className="text-blue-700 font-medium">100% al costo final</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-neutral-200/60">
                     <span>Recogida:</span>
@@ -166,15 +166,15 @@ export default function ServiciosPage() {
                 </h4>
                 <div className="space-y-3 text-sm text-neutral-600 mb-6">
                   <div className="flex items-center gap-2">
-                    <ShieldCheck size={16} className="text-emerald-600" />
+                    <ShieldCheck size={16} className="text-blue-600" />
                     <span>Impermeable y resistente al clima</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <ShieldCheck size={16} className="text-emerald-600" />
+                    <ShieldCheck size={16} className="text-blue-600" />
                     <span>Mayor capacidad de carga y peso</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <ShieldCheck size={16} className="text-emerald-600" />
+                    <ShieldCheck size={16} className="text-blue-600" />
                     <span>Reutilizable en el destino para agua o almacenamiento</span>
                   </div>
                 </div>

@@ -12,7 +12,7 @@ export function ZipRouteBooking() {
 
   return (
     <section aria-labelledby="zip-booking-title" className="bg-white rounded-3xl p-6 sm:p-10 border border-neutral-200 shadow-xl mb-12">
-      <div className="flex items-center gap-2 text-emerald-800 text-sm font-semibold mb-5">
+      <div className="flex items-center gap-2 text-blue-800 text-sm font-semibold mb-5">
         <ShieldCheck size={19} />
         Depósito seguro de $10 mediante Square
       </div>
@@ -29,7 +29,7 @@ export function ZipRouteBooking() {
       <label htmlFor="pickup-zip" className="block text-sm font-bold text-neutral-900 mb-2">
         Código postal de recogida (ZIP de EE. UU.)
       </label>
-      <div className="flex items-center gap-3 rounded-2xl border-2 border-neutral-300 focus-within:border-emerald-700 px-4 py-3 max-w-md">
+      <div className="flex items-center gap-3 rounded-2xl border-2 border-neutral-300 focus-within:border-blue-700 px-4 py-3 max-w-md">
         <MapPin className="text-brand-900 flex-shrink-0" size={21} />
         <input
           id="pickup-zip"
@@ -48,14 +48,14 @@ export function ZipRouteBooking() {
 
       <div id="zip-status" aria-live="polite" className="mt-5">
         {route ? (
-          <div className="rounded-2xl bg-emerald-50 border border-emerald-200 p-5">
+          <div className="rounded-2xl bg-blue-50 border border-blue-200 p-5">
             <div className="flex items-start gap-3">
-              <CheckCircle2 size={24} className="text-emerald-700 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 size={24} className="text-blue-700 flex-shrink-0 mt-0.5" />
               <div className="flex-1">
-                <p className="font-bold text-emerald-950 text-lg">
+                <p className="font-bold text-blue-950 text-lg">
                   Su día de recogida es el {route.spanishDay}.
                 </p>
-                <p className="text-sm text-emerald-900 mt-1 mb-4">
+                <p className="text-sm text-blue-900 mt-1 mb-4">
                   ZIP {zip} · Solo verá horarios disponibles para los {route.spanishDay}.
                 </p>
                 <a
