@@ -3,36 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { siteConfig } from "@/config/site";
+import { boxPricing, siteConfig } from "@/config/site";
 import { PillButton } from "@/components/ui/PillButton";
 import { CheckCircle2, MessageSquare, Box, Cylinder } from "lucide-react";
-
-const BOX_PRICING = [
-  {
-    name: "Caja Mediana",
-    size: "18\" × 18\" × 16\"",
-    price: "$75",
-    idealFor: "Ropa, zapatos, juguetes y alimentos no perecederos.",
-  },
-  {
-    name: "Caja Grande",
-    size: "18\" × 18\" × 24\"",
-    price: "$85",
-    idealFor: "Cobijas, colchas y electrodomésticos pequeños.",
-  },
-  {
-    name: "Caja Extra Grande",
-    size: "24\" × 24\" × 24\"",
-    price: "$110",
-    idealFor: "Artículos voluminosos y ligeros.",
-  },
-  {
-    name: "Caja Jumbo",
-    size: "Más de 24\"",
-    price: "$135",
-    idealFor: "Cargas de mayor tamaño; confirme las medidas antes de reservar.",
-  },
-] as const;
 
 export const ServicesSection: React.FC = () => {
   return (
@@ -50,7 +23,7 @@ export const ServicesSection: React.FC = () => {
         </div>
 
         {/* BOX PRICING */}
-        <div className="mb-16 sm:mb-20">
+        <div id="precios" className="mb-16 scroll-mt-28 sm:mb-20">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
             <div>
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-900">Precios de cajas</span>
@@ -64,7 +37,7 @@ export const ServicesSection: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5">
-            {BOX_PRICING.map((tier) => (
+            {boxPricing.map((tier) => (
               <div
                 key={tier.name}
                 className="rounded-2xl border border-neutral-200 bg-white p-6 flex flex-col min-h-[270px]"
@@ -75,7 +48,7 @@ export const ServicesSection: React.FC = () => {
                     <p className="mt-1 text-sm font-medium text-brand-900">{tier.size}</p>
                   </div>
                   <span className="text-2xl font-black tracking-tight text-neutral-900 whitespace-nowrap">
-                    {tier.price}
+                    ${tier.price}
                   </span>
                 </div>
 
@@ -85,19 +58,19 @@ export const ServicesSection: React.FC = () => {
                 </div>
 
                 <PillButton
-                  href={siteConfig.bookingEntryUrl}
+                  href={`/cotizar?item=${tier.id}`}
                   variant="primary"
                   size="sm"
                   className="w-full mt-5"
                 >
-                  Reservar esta medida
+                  Calcular esta medida
                 </PillButton>
               </div>
             ))}
           </div>
 
           <p className="mt-4 text-xs leading-relaxed text-neutral-500">
-            Precios expresados en USD. La tarifa Jumbo aplica a medidas superiores a 24\"; confirme las dimensiones y la ruta antes de reservar.
+            Precios expresados en USD. La tarifa Jumbo aplica a medidas superiores a 24\" y hasta 150 lb; confirme las dimensiones especiales antes de reservar.
           </p>
         </div>
 

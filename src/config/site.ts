@@ -66,7 +66,46 @@ export const navigationLinks = [
   { name: "Servicios", href: "/#servicios" },
   { name: "Cómo Funciona", href: "/#como-funciona" },
   { name: "Zonas de Cobertura", href: "/#zonas" },
-  { name: "FAQ", href: "/#faq" },
+  { name: "Prices", href: "/#precios" },
   { name: "Contacto", href: "/contacto" },
 ];
+
+export const boxPricing = [
+  {
+    id: "box-medium",
+    name: "Caja Mediana",
+    size: '18" × 18" × 16"',
+    price: 75,
+    idealFor: "Ropa, zapatos, juguetes y alimentos no perecederos.",
+  },
+  {
+    id: "box-large",
+    name: "Caja Grande",
+    size: '18" × 18" × 24"',
+    price: 85,
+    idealFor: "Cobijas, colchas y electrodomésticos pequeños.",
+  },
+  {
+    id: "box-xl",
+    name: "Caja Extra Grande",
+    size: '24" × 24" × 24"',
+    price: 110,
+    idealFor: "Artículos voluminosos y ligeros.",
+  },
+  {
+    id: "box-jumbo",
+    name: "Caja Jumbo",
+    size: 'Más de 24"',
+    price: 135,
+    idealFor: "Cargas de mayor tamaño, hasta 150 lb.",
+  },
+] as const;
+
+export const supplyPricing = [
+  { id: "box-empty", name: "Caja vacía", detail: "Según tamaño", price: 5.99 },
+  { id: "tape", name: "Cinta comercial", detail: 'Rollo de 3"', price: 2.98 },
+  { id: "wrap", name: "Wrap transparente", detail: "Por rollo", price: 9.98 },
+  { id: "tank-small", name: "Tanque pequeño vacío", detail: "30 galones", price: 64.98 },
+  { id: "tank-large", name: "Tanque grande vacío", detail: "55 galones", price: 74.98 },
+] as const;
 

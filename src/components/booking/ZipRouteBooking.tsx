@@ -1,12 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowRight, CheckCircle2, MapPin, ShieldCheck } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { bookingUrlForRoute, findPickupRoute } from "@/lib/pickupRoutes";
 
 export function ZipRouteBooking() {
   const [zip, setZip] = useState("");
+
+  useEffect(() => {
+    const prefilledZip = new URLSearchParams(window.location.search).get("zip")?.replace(/\D/g, "").slice(0, 5);
+    if (prefilledZip) setZip(prefilledZip);
+  }, []);
+
   const route = findPickupRoute(zip);
   const complete = /^\d{5}$/.test(zip);
 
