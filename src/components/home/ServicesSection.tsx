@@ -7,18 +7,97 @@ import { siteConfig } from "@/config/site";
 import { PillButton } from "@/components/ui/PillButton";
 import { CheckCircle2, MessageSquare, Box, Cylinder } from "lucide-react";
 
+const BOX_PRICING = [
+  {
+    name: "Caja Mediana",
+    size: "18\" × 18\" × 16\"",
+    price: "$75",
+    idealFor: "Ropa, zapatos, juguetes y alimentos no perecederos.",
+  },
+  {
+    name: "Caja Grande",
+    size: "18\" × 18\" × 24\"",
+    price: "$85",
+    idealFor: "Cobijas, colchas y electrodomésticos pequeños.",
+  },
+  {
+    name: "Caja Extra Grande",
+    size: "24\" × 24\" × 24\"",
+    price: "$110",
+    idealFor: "Artículos voluminosos y ligeros.",
+  },
+  {
+    name: "Caja Jumbo",
+    size: "Más de 24\"",
+    price: "$135",
+    idealFor: "Cargas de mayor tamaño; confirme las medidas antes de reservar.",
+  },
+] as const;
+
 export const ServicesSection: React.FC = () => {
   return (
     <section id="servicios" className="py-24 sm:py-32 bg-canvas text-neutral-900 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header - Clean, without specialized services badge */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.03em] text-neutral-900 mb-5 leading-tight">
-            Embalaje y Transporte de Cajas &amp; Tanques
+            Elija la mejor opción para su envío
           </h2>
           <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-            Estructuras resistentes preparadas para el trayecto internacional. Recogemos directamente en su puerta y entregamos con seguridad en cualquier provincia de la República Dominicana.
+            Cajas y tanques preparados para el trayecto internacional, con recogida programada en su puerta y entrega hacia la República Dominicana.
+          </p>
+        </div>
+
+        {/* BOX PRICING */}
+        <div className="mb-16 sm:mb-20">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-900">Precios de cajas</span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 mt-2">
+                Tarifas claras por tamaño
+              </h3>
+            </div>
+            <p className="text-sm text-neutral-600 max-w-md sm:text-right">
+              El depósito inicial de $10 se aplica al costo final del envío.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5">
+            {BOX_PRICING.map((tier) => (
+              <div
+                key={tier.name}
+                className="rounded-2xl border border-neutral-200 bg-white p-6 flex flex-col min-h-[270px]"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h4 className="text-lg font-bold text-neutral-900">{tier.name}</h4>
+                    <p className="mt-1 text-sm font-medium text-brand-900">{tier.size}</p>
+                  </div>
+                  <span className="text-2xl font-black tracking-tight text-neutral-900 whitespace-nowrap">
+                    {tier.price}
+                  </span>
+                </div>
+
+                <div className="mt-6 pt-5 border-t border-neutral-100 flex-grow">
+                  <span className="text-xs font-bold uppercase tracking-[0.16em] text-neutral-500">Ideal para</span>
+                  <p className="mt-2 text-sm leading-relaxed text-neutral-700">{tier.idealFor}</p>
+                </div>
+
+                <PillButton
+                  href={siteConfig.bookingEntryUrl}
+                  variant="primary"
+                  size="sm"
+                  className="w-full mt-5"
+                >
+                  Reservar esta medida
+                </PillButton>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-4 text-xs leading-relaxed text-neutral-500">
+            Precios expresados en USD. La tarifa Jumbo aplica a medidas superiores a 24\"; confirme las dimensiones y la ruta antes de reservar.
           </p>
         </div>
 
@@ -47,7 +126,6 @@ export const ServicesSection: React.FC = () => {
             {/* Card Content Body */}
             <div className="p-8 sm:p-10 flex flex-col justify-between flex-grow">
               <div>
-                {/* Title (Clean, no 01 badge) */}
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-9 h-9 rounded-xl bg-brand-50 text-brand-900 flex items-center justify-center">
                     <Box size={20} strokeWidth={2.2} />
@@ -61,7 +139,12 @@ export const ServicesSection: React.FC = () => {
                   Perfectas para ropa, calzado, alimentos secos, juguetes, artículos del hogar y electrónicos pequeños. Cajas estándar y de alta resistencia con flejado perimetral para máxima protección.
                 </p>
 
-                {/* Features List */}
+                <div className="rounded-2xl bg-canvas border border-neutral-200 p-4 mb-6">
+                  <span className="text-xs font-bold uppercase tracking-[0.16em] text-brand-900">Ideal para</span>
+                  <p className="text-sm text-neutral-700 mt-1">Carga ligera o mediana que desea organizar y proteger por categorías.</p>
+                </div>
+
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-neutral-500 mb-3">Incluye</p>
                 <div className="space-y-3 mb-8">
                   <div className="flex items-start gap-3 text-sm text-neutral-700">
                     <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
@@ -123,7 +206,6 @@ export const ServicesSection: React.FC = () => {
             {/* Card Content Body */}
             <div className="p-8 sm:p-10 flex flex-col justify-between flex-grow">
               <div>
-                {/* Title (Clean, no 02 badge) */}
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-9 h-9 rounded-xl bg-brand-50 text-brand-900 flex items-center justify-center">
                     <Cylinder size={20} strokeWidth={2.2} />
@@ -137,7 +219,12 @@ export const ServicesSection: React.FC = () => {
                   La solución predilecta para enviar víveres voluminosos, aceites, arroz, enlatados y electrodomésticos protegidos de la humedad. Cuentan con tapa hermética y aro de seguridad.
                 </p>
 
-                {/* Features List */}
+                <div className="rounded-2xl bg-canvas border border-neutral-200 p-4 mb-6">
+                  <span className="text-xs font-bold uppercase tracking-[0.16em] text-brand-900">Ideal para</span>
+                  <p className="text-sm text-neutral-700 mt-1">Carga voluminosa o pesada que necesita un contenedor rígido y resistente.</p>
+                </div>
+
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-neutral-500 mb-3">Incluye</p>
                 <div className="space-y-3 mb-8">
                   <div className="flex items-start gap-3 text-sm text-neutral-700">
                     <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
@@ -177,6 +264,81 @@ export const ServicesSection: React.FC = () => {
             </div>
           </motion.div>
 
+        </div>
+
+        {/* SERVICE COMPARISON */}
+        <div className="mb-16 sm:mb-20 rounded-3xl border border-neutral-200/90 bg-white overflow-hidden shadow-sm">
+          <div className="p-8 sm:p-10 border-b border-neutral-200">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-900">Decisión rápida</span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 mt-2">
+              ¿Cajas o tanques?
+            </h3>
+            <p className="text-sm sm:text-base text-neutral-600 mt-2 max-w-2xl">
+              Elija según el tipo de carga, el nivel de protección que necesita y la forma en que desea organizar sus artículos.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[640px] text-left text-sm">
+              <thead className="bg-canvas text-xs uppercase tracking-wider text-neutral-500">
+                <tr>
+                  <th className="px-6 sm:px-10 py-4 font-bold">Característica</th>
+                  <th className="px-6 py-4 font-bold text-brand-900">Cajas</th>
+                  <th className="px-6 sm:px-10 py-4 font-bold text-brand-900">Tanques</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-neutral-200 text-neutral-700">
+                <tr>
+                  <th className="px-6 sm:px-10 py-4 font-semibold text-neutral-900">Mejor para</th>
+                  <td className="px-6 py-4">Ropa, zapatos y artículos del hogar</td>
+                  <td className="px-6 sm:px-10 py-4">Víveres, artículos voluminosos y carga pesada</td>
+                </tr>
+                <tr>
+                  <th className="px-6 sm:px-10 py-4 font-semibold text-neutral-900">Protección</th>
+                  <td className="px-6 py-4">Cartón reforzado y relleno interior</td>
+                  <td className="px-6 sm:px-10 py-4">Contenedor rígido, tapa y aro de seguridad</td>
+                </tr>
+                <tr>
+                  <th className="px-6 sm:px-10 py-4 font-semibold text-neutral-900">Preparación</th>
+                  <td className="px-6 py-4">Distribuya el peso y selle todas las uniones</td>
+                  <td className="px-6 sm:px-10 py-4">Ajuste el cierre y coloque los datos del destinatario</td>
+                </tr>
+                <tr>
+                  <th className="px-6 sm:px-10 py-4 font-semibold text-neutral-900">Reserva inicial</th>
+                  <td className="px-6 py-4 font-bold text-neutral-900">$10 aplicados al envío</td>
+                  <td className="px-6 sm:px-10 py-4 font-bold text-neutral-900">$10 aplicados al envío</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* OPERATIONAL WORKFLOW */}
+        <div className="mb-16 sm:mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-900">Cómo funciona</span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 mt-2">
+              Del código postal a la entrega
+            </h3>
+            <p className="text-sm sm:text-base text-neutral-600 mt-2">
+              Le guiamos desde la selección de la ruta hasta la entrega de su carga en la República Dominicana.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { number: "01", title: "Consulte su ZIP", detail: "Identificamos el día de recogida disponible para su zona." },
+              { number: "02", title: "Reserve su turno", detail: "Elija una fecha y pague el depósito inicial de $10." },
+              { number: "03", title: "Prepare su carga", detail: "Selle, etiquete y deje sus cajas o tanques listos." },
+              { number: "04", title: "Recogemos y entregamos", detail: "Coordinamos el traslado hasta su destinatario en RD." },
+            ].map((step) => (
+              <div key={step.number} className="rounded-2xl border border-neutral-200 bg-white p-6">
+                <span className="text-sm font-black text-brand-900">{step.number}</span>
+                <h4 className="text-lg font-bold text-neutral-900 mt-4 mb-2">{step.title}</h4>
+                <p className="text-sm leading-relaxed text-neutral-600">{step.detail}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* PACKING TO DELIVERY VISUAL STORY */}
