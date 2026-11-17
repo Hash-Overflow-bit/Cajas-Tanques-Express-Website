@@ -57,14 +57,6 @@ export const ServicesSection: React.FC = () => {
                   <p className="mt-2 text-sm leading-relaxed text-neutral-700">{tier.idealFor}</p>
                 </div>
 
-                <PillButton
-                  href={`/cotizar?item=${tier.id}`}
-                  variant="primary"
-                  size="sm"
-                  className="w-full mt-5"
-                >
-                  Calcular esta medida
-                </PillButton>
               </div>
             ))}
           </div>
