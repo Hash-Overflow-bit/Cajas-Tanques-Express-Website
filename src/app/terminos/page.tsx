@@ -124,11 +124,14 @@ export default function TerminosPage() {
               6. Términos del Servicio de Mensajería SMS
             </h2>
             <p className="mb-2">
-              <strong>Programa CAJAS &amp; TANQUES EXPRESS SMS:</strong> al seleccionar voluntariamente la opción de recibir mensajes de texto, usted acepta recibir mensajes transaccionales relacionados con sus reservas y recogidas, incluyendo confirmaciones, recordatorios, actualizaciones de llegada y avisos operativos.
+              <strong>Programa CAJAS &amp; TANQUES EXPRESS SMS:</strong> al seleccionar voluntariamente la opción de recibir mensajes de texto, usted acepta recibir mensajes transaccionales relacionados con sus reservas y recogidas, incluyendo confirmaciones, recordatorios, actualizaciones de llegada y avisos operativos. Esta autorización no incluye promociones.
+            </p>
+            <p className="mb-2">
+              <strong>Programa CAJAS &amp; TANQUES EXPRESS — Referidos SMS:</strong> los mensajes promocionales, incluidas invitaciones y ofertas del programa de referidos, requieren que usted seleccione voluntariamente Yes en la pregunta promocional independiente del formulario de preferencias SMS. El consentimiento es opcional y no es condición de compra, reserva ni obtención de recompensas de referidos. Elegir No no afecta esos servicios. El consentimiento transaccional y el promocional son independientes, y solo puede autorizar mensajes para su propio número. Las promociones se enviarán únicamente cuando el programa de mensajería esté autorizado y su consentimiento siga vigente.
             </p>
             <ul className="list-disc pl-6 space-y-1">
               <li>El cliente confirma que es el titular de la línea telefónica facilitada.</li>
-              <li><strong>Frecuencia:</strong> la frecuencia de mensajes varía según la actividad de su reserva y normalmente será de 2 a 4 mensajes por servicio; no se prometen mensajes diarios.</li>
+              <li><strong>Frecuencia:</strong> la frecuencia de mensajes varía según la actividad de su reserva y normalmente será de 2 a 4 mensajes por servicio; no se prometen mensajes diarios. La frecuencia de los mensajes promocionales varía según la actividad del programa de referidos.</li>
               <li><strong>STOP:</strong> puede cancelar el servicio en cualquier momento respondiendo <strong>STOP</strong>. Después de procesar la solicitud, no recibirá más mensajes SMS del programa, salvo los necesarios para confirmar la baja.</li>
               <li><strong>HELP:</strong> para obtener ayuda, responda <strong>HELP</strong> o contacte directamente al {siteConfig.contact.phoneDisplay} o {siteConfig.contact.phoneSecondaryDisplay}.</li>
               <li>Tarifas de mensajes y datos pueden ser aplicadas por su proveedor de telefonía móvil (<em>Message and data rates may apply</em>).</li>

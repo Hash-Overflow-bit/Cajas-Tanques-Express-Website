@@ -75,12 +75,12 @@ export default function PrivacidadPage() {
               3. Consentimiento de Comunicaciones por SMS (A2P 10DLC)
             </h2>
             <p className="mb-4">
-              Al seleccionar voluntariamente la opción de recibir SMS e ingresar su número de teléfono móvil en un formulario o sistema de reservas habilitado para ello, usted otorga su consentimiento expreso para recibir mensajes de texto transaccionales relacionados con el servicio solicitado. El consentimiento SMS es opcional y no condiciona la compra, el envío del formulario ni la prestación del servicio.
+              Al seleccionar voluntariamente la opción de recibir SMS e ingresar su número de teléfono móvil en un formulario o sistema de reservas habilitado para ello, usted otorga su consentimiento expreso para recibir mensajes de texto transaccionales relacionados con el servicio solicitado. Los mensajes promocionales del programa de referidos de {siteConfig.name} requieren una autorización expresa y separada en el formulario de preferencias SMS; aceptar mensajes transaccionales no autoriza promociones. Solo puede dar consentimiento para su propio número móvil. El consentimiento SMS es opcional y no condiciona la compra, el envío del formulario ni la prestación del servicio.
             </p>
             <div className="space-y-3 text-sm text-neutral-800">
               <div className="flex items-start gap-2.5">
                 <CheckCircle2 size={18} className="text-brand-900 flex-shrink-0 mt-0.5" />
-                <span><strong>Naturaleza de los mensajes:</strong> Los SMS se envían con fines estrictamente operativos y transaccionales: confirmación de reserva de cita, recordatorio del horario de recogida del chofer, avisos de retraso por tráfico/clima y notificación del despacho hacia República Dominicana.</span>
+                <span><strong>Naturaleza de los mensajes:</strong> Los SMS transaccionales se envían con fines operativos: confirmación de reserva de cita, recordatorio del horario de recogida del chofer, avisos de retraso por tráfico/clima y notificación del despacho hacia República Dominicana. Por separado, quienes autoricen SMS promocionales pueden recibir invitaciones y ofertas del programa de referidos. Las promociones solo se enviarán mediante un programa de mensajería autorizado y con consentimiento vigente.</span>
               </div>
               <div className="flex items-start gap-2.5">
                 <CheckCircle2 size={18} className="text-brand-900 flex-shrink-0 mt-0.5" />
@@ -88,7 +88,7 @@ export default function PrivacidadPage() {
               </div>
               <div className="flex items-start gap-2.5">
                 <CheckCircle2 size={18} className="text-brand-900 flex-shrink-0 mt-0.5" />
-                <span><strong>Frecuencia y tarifas:</strong> La frecuencia de los mensajes depende de los hitos de su pedido (generalmente 2 a 4 mensajes por servicio). Pueden aplicarse tarifas estándar de mensajería y datos según su operador telefónico (<em>Message and data rates may apply</em>).</span>
+                <span><strong>Frecuencia y tarifas:</strong> La frecuencia de los mensajes transaccionales depende de los hitos de su pedido (generalmente 2 a 4 mensajes por servicio). La frecuencia de los SMS promocionales varía según la actividad del programa de referidos. Pueden aplicarse tarifas estándar de mensajería y datos según su operador telefónico (<em>Message and data rates may apply</em>).</span>
               </div>
               <div className="flex items-start gap-2.5">
                 <CheckCircle2 size={18} className="text-brand-900 flex-shrink-0 mt-0.5" />
@@ -111,7 +111,7 @@ export default function PrivacidadPage() {
               <li><strong>Square:</strong> Pasarela de pago segura encargada de procesar el depósito de $10.</li>
               <li><strong>Zapier:</strong> Herramienta de sincronización y automatización entre el registro de cita y la hoja de ruta operativa.</li>
               <li><strong>Google Sheets:</strong> Registro seguro y controlado para la asignación de rutas y choferes de recogida.</li>
-              <li><strong>Twilio:</strong> Infraestructura de telecomunicaciones utilizada para el envío seguro de alertas transaccionales por SMS.</li>
+              <li><strong>Twilio:</strong> Infraestructura de telecomunicaciones utilizada para el envío de SMS transaccionales y, cuando exista autorización del programa y consentimiento separado del cliente, SMS promocionales de referidos.</li>
             </ul>
           </div>
 
@@ -121,7 +121,7 @@ export default function PrivacidadPage() {
               5. Seguridad y Retención de Datos
             </h2>
             <p>
-              Implementamos medidas administrativas, técnicas y organizativas para proteger su información contra accesos no autorizados, pérdida o alteración. Conservamos los datos del cliente únicamente durante el tiempo necesario para completar la recogida, transporte, desaduanaje y entrega en la República Dominicana, así como para cumplir con las obligaciones fiscales y regulatorias aplicables.
+              Implementamos medidas administrativas, técnicas y organizativas para proteger su información contra accesos no autorizados, pérdida o alteración. Conservamos los registros de consentimiento y baja necesarios para respetar sus preferencias de SMS y acreditar las autorizaciones aplicables. Conservamos los demás datos del cliente únicamente durante el tiempo necesario para completar la recogida, transporte, desaduanaje y entrega en la República Dominicana, así como para cumplir con las obligaciones fiscales y regulatorias aplicables.
             </p>
           </div>
 
