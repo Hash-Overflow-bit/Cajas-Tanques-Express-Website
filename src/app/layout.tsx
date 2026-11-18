@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { Navbar } from "@/components/layout/Navbar";
@@ -45,6 +46,15 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body className="min-h-screen flex flex-col bg-canvas text-neutral-900 antialiased selection:bg-brand-900 selection:text-white">
+        <Script
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-M2Z84LZP"
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag-manager-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());`}
+        </Script>
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
