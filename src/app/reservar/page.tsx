@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 import { CalendarCheck, CreditCard, Clock, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Reservar Recogida por ZIP | Cajas & Tanques Express",
+  title: "Reservar Recogida por ZIP | CAJAS & TANQUES EXPRESS",
   description: "Ingrese su código postal para encontrar el día correcto de recogida de cajas y tanques. Reserve su turno en Acuity con $10 de depósito seguro.",
 };
 

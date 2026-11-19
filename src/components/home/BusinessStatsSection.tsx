@@ -16,7 +16,7 @@ export const BusinessStatsSection: React.FC = () => {
 
   return (
     <section
-      aria-label="Estadísticas de Cajas Y Tanques Express"
+      aria-label="Estadísticas de CAJAS & TANQUES EXPRESS"
       className="relative overflow-hidden bg-[#071A2A] text-white"
     >
       <div

@@ -77,7 +77,7 @@ export const Hero: React.FC = () => {
           >
             <Image
               src="/cajas-tanques-express-van-reference-transparent.png"
-              alt="Van de Cajas y Tanques Express con cajas y tanques"
+              alt="Van de CAJAS & TANQUES EXPRESS con cajas y tanques"
               width={758}
               height={506}
               priority
