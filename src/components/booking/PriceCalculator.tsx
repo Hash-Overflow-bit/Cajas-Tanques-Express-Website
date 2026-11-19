@@ -3,7 +3,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { CheckCircle2, Minus, Plus, ShieldCheck, Trash2 } from "lucide-react";
-import { boxPricing, siteConfig, supplyPricing } from "@/config/site";
+import { boxPricing, siteConfig, supplyPricing, tankPricing } from "@/config/site";
 import { findPickupRoute } from "@/lib/pickupRoutes";
 
 type CalculatorLine = {
@@ -23,7 +23,15 @@ const catalog = [
     name: item.name,
     detail: item.size,
     price: item.price,
-    category: "Envío",
+    category: "Caja",
+    reviewRequired: false,
+  })),
+  ...tankPricing.map((item) => ({
+    id: item.id,
+    name: item.name,
+    detail: item.size,
+    price: item.price,
+    category: "Tanque",
     reviewRequired: false,
   })),
   ...supplyPricing.map((item) => ({
@@ -41,7 +49,7 @@ const catalogById = new Map<string, (typeof catalog)[number]>(catalog.map((item)
 export function PriceCalculator() {
   const router = useRouter();
   const [lines, setLines] = useState<CalculatorLine[]>([
-    { id: 1, productId: "box-medium", quantity: 1 },
+    { id: 1, productId: "box-18x18x28", quantity: 1 },
   ]);
   const [nextLineId, setNextLineId] = useState(2);
   const [shipmentType, setShipmentType] = useState<"personal" | "commercial">("personal");

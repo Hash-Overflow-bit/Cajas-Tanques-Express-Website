@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { boxPricing, siteConfig } from "@/config/site";
+import { boxPricing, siteConfig, tankPricing } from "@/config/site";
 import { PillButton } from "@/components/ui/PillButton";
 import { CheckCircle2, MessageSquare, Box, Cylinder } from "lucide-react";
 
@@ -22,47 +22,108 @@ export const ServicesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* BOX PRICING */}
+        {/* PRICING & SIZES SECTION (OFERTA DE LANZAMIENTO) */}
         <div id="precios" className="mb-16 scroll-mt-28 sm:mb-20">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
             <div>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-900">Precios de cajas</span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 mt-2">
-                Tarifas claras por tamaño
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold uppercase tracking-wider mb-2">
+                ¡Oferta de Lanzamiento! 🇩🇴
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900">
+                Lista Oficial de Precios y Medidas
               </h3>
             </div>
             <p className="text-sm text-neutral-600 max-w-md sm:text-right">
-              El depósito inicial de $10 se aplica al costo final del envío.
+              Recogida a domicilio en NY, Westchester, CT y NJ. Depósito de solo $10 aplicado al total.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5">
-            {boxPricing.map((tier) => (
-              <div
-                key={tier.name}
-                className="rounded-2xl border border-neutral-200 bg-white p-6 flex flex-col min-h-[270px]"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h4 className="text-lg font-bold text-neutral-900">{tier.name}</h4>
-                    <p className="mt-1 text-sm font-medium text-brand-900">{tier.size}</p>
-                  </div>
-                  <span className="text-2xl font-black tracking-tight text-neutral-900 whitespace-nowrap">
-                    ${tier.price}
-                  </span>
-                </div>
-
-                <div className="mt-6 pt-5 border-t border-neutral-100 flex-grow">
-                  <span className="text-xs font-bold uppercase tracking-[0.16em] text-neutral-500">Ideal para</span>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-700">{tier.idealFor}</p>
-                </div>
-
+          {/* CAJAS PRICING (4 Medidas) */}
+          <div className="mb-8">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-brand-50 text-brand-900 flex items-center justify-center">
+                <Box size={18} />
               </div>
-            ))}
+              <h4 className="text-lg font-bold text-neutral-900">Precios de Cajas por Medida</h4>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5">
+              {boxPricing.map((tier) => (
+                <div
+                  key={tier.id}
+                  className="rounded-2xl border border-neutral-200 bg-white p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div>
+                    <div className="flex items-start justify-between gap-2 mb-3">
+                      <span className="px-2.5 py-1 rounded-md bg-neutral-100 text-xs font-bold text-neutral-700 font-mono">
+                        {tier.size}
+                      </span>
+                      <span className="text-2xl font-black tracking-tight text-red-600 whitespace-nowrap">
+                        ${tier.price}
+                      </span>
+                    </div>
+                    <h5 className="text-base font-bold text-neutral-900">{tier.name}</h5>
+                    <p className="mt-2 text-xs leading-relaxed text-neutral-600">{tier.idealFor}</p>
+                  </div>
+
+                  <div className="mt-5 pt-4 border-t border-neutral-100 flex items-center justify-between">
+                    <span className="text-[11px] font-semibold text-emerald-700">✓ Puerta a puerta en RD</span>
+                    <a
+                      href={siteConfig.bookingEntryUrl}
+                      className="text-xs font-bold text-brand-900 hover:underline"
+                    >
+                      Reservar →
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <p className="mt-4 text-xs leading-relaxed text-neutral-500">
-            Precios expresados en USD. La tarifa Jumbo aplica a medidas superiores a 24\" y hasta 150 lb; confirme las dimensiones especiales antes de reservar.
+          {/* TANQUES PRICING (2 Medidas) */}
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-brand-50 text-brand-900 flex items-center justify-center">
+                <Cylinder size={18} />
+              </div>
+              <h4 className="text-lg font-bold text-neutral-900">Precios de Tanques (Barriletes)</h4>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+              {tankPricing.map((tier) => (
+                <div
+                  key={tier.id}
+                  className="rounded-2xl border border-neutral-200 bg-white p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div>
+                    <div className="flex items-start justify-between gap-2 mb-3">
+                      <span className="px-2.5 py-1 rounded-md bg-neutral-100 text-xs font-bold text-neutral-700 font-mono">
+                        {tier.size}
+                      </span>
+                      <span className="text-2xl font-black tracking-tight text-red-600 whitespace-nowrap">
+                        ${tier.price.toFixed(2)}
+                      </span>
+                    </div>
+                    <h5 className="text-base font-bold text-neutral-900">{tier.name}</h5>
+                    <p className="mt-2 text-xs leading-relaxed text-neutral-600">{tier.idealFor}</p>
+                  </div>
+
+                  <div className="mt-5 pt-4 border-t border-neutral-100 flex items-center justify-between">
+                    <span className="text-[11px] font-semibold text-emerald-700">✓ Cierre hermético con aro</span>
+                    <a
+                      href={siteConfig.bookingEntryUrl}
+                      className="text-xs font-bold text-brand-900 hover:underline"
+                    >
+                      Reservar →
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <p className="mt-5 text-xs leading-relaxed text-neutral-500">
+            * Tarifas expresadas en USD para envíos puerta a puerta hacia toda la República Dominicana. El depósito inicial de $10 se descuenta al 100% de la factura final al momento de la recogida en su domicilio.
           </p>
         </div>
 

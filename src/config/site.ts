@@ -31,10 +31,10 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: "CAJAS & TANQUES EXPRESS",
-  legalBusinessName: "Sebastian Online Store Corp.",
-  tagline: "Envíos Confiables a República Dominicana",
+  legalBusinessName: "CAJAS & TANQUES EXPRESS LLC",
+  tagline: "¡Envíos Puerta a Puerta a la República Dominicana! 🇩🇴",
   description:
-    "Servicio profesional de recogida y transporte de cajas y tanques hacia toda la República Dominicana. Puntualidad garantizada y reserva en línea con solo $10 de depósito.",
+    "Servicio profesional de recogida a domicilio (NY, Westchester, CT, NJ) y transporte seguro de cajas y tanques hacia toda la República Dominicana. Reserva en línea con solo $10 de depósito.",
   url: "https://cajasytanquesexpress.com",
   acuityBookingUrl: "https://CajasYtanquesExpress.as.me/",
   bookingEntryUrl: "/reservar",
@@ -46,11 +46,11 @@ export const siteConfig: SiteConfig = {
     whatsappNumber: "16466529547",
     whatsappDisplay: "(646) 652-9547",
     email: "inf@cajasytanquesexpress.com",
-    address: "23 Saw Mill River Rd, Yonkers, NY 10701, United States",
-    hours: "Monday to Friday: 8:00 AM - 6:00 PM · Saturday: 8:00 AM - 12:00 PM",
+    address: "198 Fayette St. Perth Amboy, NJ 08861",
+    hours: "Lunes a Viernes: 8:00 AM - 6:00 PM · Sábado: 8:00 AM - 12:00 PM",
   },
   social: {
-    facebook: "https://facebook.com",
+    facebook: "https://facebook.com/CajasTanquesExpress",
     instagram: "https://instagram.com",
   },
   metrics: {
@@ -64,40 +64,57 @@ export const siteConfig: SiteConfig = {
 export const navigationLinks = [
   { name: "Inicio", href: "/" },
   { name: "Servicios", href: "/#servicios" },
+  { name: "Precios y Medidas", href: "/#precios" },
   { name: "Cómo Funciona", href: "/#como-funciona" },
   { name: "Zonas de Cobertura", href: "/#zonas" },
-  { name: "Prices", href: "/#precios" },
   { name: "Contacto", href: "/contacto" },
 ];
 
 export const boxPricing = [
   {
-    id: "box-medium",
-    name: "Caja Mediana",
-    size: '18" × 18" × 16"',
+    id: "box-18x18x28",
+    name: "Caja Estándar",
+    size: '18" × 18" × 28"',
     price: 75,
     idealFor: "Ropa, zapatos, juguetes y alimentos no perecederos.",
   },
   {
-    id: "box-large",
+    id: "box-24x24x27",
+    name: "Caja Mediana",
+    size: '24" × 24" × 27"',
+    price: 125,
+    idealFor: "Cobijas, colchas, electrodomésticos pequeños y despensa.",
+  },
+  {
+    id: "box-24x24x34",
     name: "Caja Grande",
-    size: '18" × 18" × 24"',
-    price: 85,
-    idealFor: "Cobijas, colchas y electrodomésticos pequeños.",
+    size: '24" × 24" × 34"',
+    price: 225,
+    idealFor: "Envíos voluminosos, compras familiares y artículos de hogar.",
   },
   {
-    id: "box-xl",
-    name: "Caja Extra Grande",
-    size: '24" × 24" × 24"',
-    price: 110,
-    idealFor: "Artículos voluminosos y ligeros.",
-  },
-  {
-    id: "box-jumbo",
+    id: "box-24x24x48",
     name: "Caja Jumbo",
-    size: 'Más de 24"',
-    price: 135,
-    idealFor: "Cargas de mayor tamaño, hasta 150 lb.",
+    size: '24" × 24" × 48"',
+    price: 250,
+    idealFor: "Máxima capacidad para mudanzas, carga pesada y artículos grandes.",
+  },
+] as const;
+
+export const tankPricing = [
+  {
+    id: "tank-55",
+    name: "Tanque 55 Galones",
+    size: "55 Galones (Azul)",
+    price: 74.99,
+    idealFor: "Víveres, aceites, arroz, detergentes, enlatados y ropa hermética.",
+  },
+  {
+    id: "tank-75",
+    name: "Tanque 75 Galones",
+    size: "75 Galones (Negro)",
+    price: 139.99,
+    idealFor: "Máxima capacidad para víveres pesados, herramientas y electrodomésticos.",
   },
 ] as const;
 
@@ -105,7 +122,6 @@ export const supplyPricing = [
   { id: "box-empty", name: "Caja vacía", detail: "Según tamaño", price: 5.99 },
   { id: "tape", name: "Cinta comercial", detail: 'Rollo de 3"', price: 2.98 },
   { id: "wrap", name: "Wrap transparente", detail: "Por rollo", price: 9.98 },
-  { id: "tank-small", name: "Tanque pequeño vacío", detail: "30 galones", price: 64.98 },
-  { id: "tank-large", name: "Tanque grande vacío", detail: "55 galones", price: 74.98 },
+  { id: "tank-55-empty", name: "Tanque 55 Galones", detail: "Plástico sellado con aro", price: 74.99 },
+  { id: "tank-75-empty", name: "Tanque 75 Galones", detail: "Plástico sellado con aro", price: 139.99 },
 ] as const;
-

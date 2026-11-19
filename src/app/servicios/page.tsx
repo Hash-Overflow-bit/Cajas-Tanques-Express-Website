@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { siteConfig } from "@/config/site";
+import { boxPricing, siteConfig, tankPricing } from "@/config/site";
 import { PillButton } from "@/components/ui/PillButton";
 import { Box, Cylinder, CheckCircle2, AlertTriangle, ShieldCheck, HelpCircle } from "lucide-react";
 
@@ -80,29 +80,36 @@ export default function ServiciosPage() {
               </div>
 
               <div className="lg:col-span-4 bg-canvas rounded-2xl p-6 border border-neutral-200">
-                <h4 className="font-bold text-neutral-900 text-sm uppercase tracking-wider mb-4">
-                  Resumen de Reserva
+                <span className="inline-block px-2.5 py-0.5 rounded-full bg-red-100 text-red-700 text-[11px] font-bold uppercase tracking-wider mb-2">
+                  ¡Oferta de Lanzamiento!
+                </span>
+                <h4 className="font-bold text-neutral-900 text-sm uppercase tracking-wider mb-3">
+                  Medidas y Precios de Cajas
                 </h4>
-                <div className="space-y-3 text-sm text-neutral-600 mb-6">
-                  <div className="flex justify-between py-2 border-b border-neutral-200/60">
-                    <span>Depósito inicial:</span>
+                <div className="space-y-2 text-sm text-neutral-700 mb-5">
+                  {boxPricing.map((box) => (
+                    <div key={box.id} className="flex justify-between py-1.5 border-b border-neutral-200/60 font-mono text-xs">
+                      <span className="font-bold text-neutral-900">{box.size}</span>
+                      <strong className="text-red-600 text-sm font-sans">${box.price}</strong>
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-2 text-xs text-neutral-600 mb-4 pt-2 border-t border-neutral-200">
+                  <div className="flex justify-between">
+                    <span>Depósito de reserva:</span>
                     <strong className="text-brand-900">$10 (Square)</strong>
                   </div>
-                  <div className="flex justify-between py-2 border-b border-neutral-200/60">
+                  <div className="flex justify-between">
                     <span>Aplicación:</span>
-                    <span className="text-blue-700 font-medium">100% al costo final</span>
+                    <span className="text-emerald-700 font-medium">100% al costo final</span>
                   </div>
-                  <div className="flex justify-between py-2 border-b border-neutral-200/60">
+                  <div className="flex justify-between">
                     <span>Recogida:</span>
-                    <span>En su puerta</span>
-                  </div>
-                  <div className="flex justify-between py-2">
-                    <span>Destino:</span>
-                    <span>Toda República Dominicana</span>
+                    <span>NY, Westchester, CT, NJ</span>
                   </div>
                 </div>
-                <div className="text-xs text-neutral-500 bg-white p-3 rounded-xl border border-neutral-200">
-                  * El valor total del flete se confirma según las dimensiones y tarifas vigentes al momento de la recogida.
+                <div className="text-[11px] text-neutral-500 bg-white p-2.5 rounded-xl border border-neutral-200">
+                  * Precios puerta a puerta para envíos a cualquier provincia de República Dominicana.
                 </div>
               </div>
             </div>
@@ -161,25 +168,36 @@ export default function ServiciosPage() {
               </div>
 
               <div className="lg:col-span-4 bg-canvas rounded-2xl p-6 border border-neutral-200">
-                <h4 className="font-bold text-neutral-900 text-sm uppercase tracking-wider mb-4">
-                  Ventajas del Tanque
+                <span className="inline-block px-2.5 py-0.5 rounded-full bg-red-100 text-red-700 text-[11px] font-bold uppercase tracking-wider mb-2">
+                  ¡Oferta de Lanzamiento!
+                </span>
+                <h4 className="font-bold text-neutral-900 text-sm uppercase tracking-wider mb-3">
+                  Precios de Tanques
                 </h4>
-                <div className="space-y-3 text-sm text-neutral-600 mb-6">
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck size={16} className="text-blue-600" />
-                    <span>Impermeable y resistente al clima</span>
+                <div className="space-y-2 text-sm text-neutral-700 mb-5">
+                  {tankPricing.map((tank) => (
+                    <div key={tank.id} className="flex justify-between py-1.5 border-b border-neutral-200/60 font-mono text-xs">
+                      <span className="font-bold text-neutral-900">{tank.size}</span>
+                      <strong className="text-red-600 text-sm font-sans">${tank.price.toFixed(2)}</strong>
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-2 text-xs text-neutral-600 mb-4 pt-2 border-t border-neutral-200">
+                  <div className="flex justify-between">
+                    <span>Depósito de reserva:</span>
+                    <strong className="text-brand-900">$10 (Square)</strong>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck size={16} className="text-blue-600" />
-                    <span>Mayor capacidad de carga y peso</span>
+                  <div className="flex justify-between">
+                    <span>Cierre:</span>
+                    <span className="text-emerald-700 font-medium">Aro hermético con seguro</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck size={16} className="text-blue-600" />
-                    <span>Reutilizable en el destino para agua o almacenamiento</span>
+                  <div className="flex justify-between">
+                    <span>Recogida:</span>
+                    <span>NY, Westchester, CT, NJ</span>
                   </div>
                 </div>
-                <div className="text-xs text-neutral-500 bg-white p-3 rounded-xl border border-neutral-200">
-                  * Disponemos de tanques vacíos si necesita que le suministremos uno previamente. Consúltenos por WhatsApp.
+                <div className="text-[11px] text-neutral-500 bg-white p-2.5 rounded-xl border border-neutral-200">
+                  * Máxima capacidad y protección impermeable para víveres pesados, arroz, aceites y electrodomésticos.
                 </div>
               </div>
             </div>
