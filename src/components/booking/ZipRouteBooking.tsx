@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { ArrowRight, CheckCircle2, MapPin, ShieldCheck } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { bookingUrlForRoute, findPickupRoute } from "@/lib/pickupRoutes";
+import { trackMetaEvent } from "@/lib/metaPixel";
 
 export function ZipRouteBooking() {
   const [zip, setZip] = useState("");
@@ -68,6 +69,15 @@ export function ZipRouteBooking() {
                   href={bookingUrlForRoute(route, zip)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    trackMetaEvent("Lead", {
+                      content_name: `Reserva Recogida - Ruta ${route.spanishDay}`,
+                      content_category: "Pickup Booking",
+                      value: 10.0,
+                      currency: "USD",
+                      postal_code: zip,
+                    });
+                  }}
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-900 hover:bg-brand-950 text-white font-semibold px-6 py-3 transition-colors"
                 >
                   Elegir horario del {route.spanishDay}
