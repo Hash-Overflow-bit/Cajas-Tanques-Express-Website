@@ -46,7 +46,7 @@ export const siteConfig: SiteConfig = {
     whatsappNumber: "16466529547",
     whatsappDisplay: "(646) 652-9547",
     email: "inf@cajasytanquesexpress.com",
-    address: "198 Fayette St. Perth Amboy, NJ 08861",
+    address: "25 Saw Mill River Road Yonkers NY",
     hours: "Lunes a Viernes: 8:00 AM - 6:00 PM · Sábado: 8:00 AM - 12:00 PM",
   },
   social: {
