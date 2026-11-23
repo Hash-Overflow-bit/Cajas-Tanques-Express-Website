@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { FunnelClickTracker } from "@/components/analytics/FunnelClickTracker";
 import { MobileStickyBar } from "@/components/ui/MobileStickyBar";
 
 export const metadata: Metadata = {
@@ -92,6 +93,7 @@ gtag('js', new Date());`}
         <main className="flex-grow">{children}</main>
         <Footer />
         <MobileStickyBar />
+        <FunnelClickTracker />
       </body>
     </html>
   );

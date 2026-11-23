@@ -10,15 +10,15 @@ export const metadata: Metadata = {
 
 export default function ReservarPage() {
   return (
-    <main className="pt-32 sm:pt-40 pb-16 sm:pb-20">
+    <main className="pt-24 sm:pt-40 pb-16 sm:pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-neutral-900 tracking-[-0.03em] mb-4">
-            Programe su Recogida de Cajas y Tanques
+        {/* Kept short so the ZIP field is on the first mobile screen. */}
+        <div className="text-center mb-6 sm:mb-10">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-neutral-900 tracking-[-0.03em] mb-3 sm:mb-4">
+            Reserve su Recogida
           </h1>
-          <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-            Su día de recogida depende de la dirección. Introduzca su ZIP y
-            lo llevaremos al calendario correcto antes de pagar el depósito de $10.
+          <p className="text-sm sm:text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+            Ingrese su ZIP, elija su horario y confirme con $10 de depósito.
           </p>
         </div>
 
