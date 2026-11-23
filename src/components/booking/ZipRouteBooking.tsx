@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ArrowRight, CheckCircle2, MapPin, ShieldCheck } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { bookingUrlForRoute, findPickupRoute } from "@/lib/pickupRoutes";
 import { trackMetaEvent } from "@/lib/metaPixel";
+import { trackEvent } from "@/lib/analytics";
 
 export function ZipRouteBooking() {
   const [zip, setZip] = useState("");
@@ -17,6 +18,19 @@ export function ZipRouteBooking() {
   const route = findPickupRoute(zip);
   const complete = /^\d{5}$/.test(zip);
 
+  // One zip_checked event per distinct 5-digit ZIP, so we can see how many
+  // visitors get a route vs. land outside coverage.
+  const lastTrackedZip = useRef<string | null>(null);
+  useEffect(() => {
+    if (!complete || lastTrackedZip.current === zip) return;
+    lastTrackedZip.current = zip;
+    trackEvent("zip_checked", {
+      pickup_zip: zip,
+      route_found: Boolean(route),
+      ...(route ? { pickup_route: route.spanishDay } : {}),
+    });
+  }, [complete, zip, route]);
+
   return (
     <section aria-labelledby="zip-booking-title" className="bg-white rounded-3xl p-6 sm:p-10 border border-neutral-200 shadow-xl mb-12">
       <div className="flex items-center gap-2 text-blue-800 text-sm font-semibold mb-5">
@@ -26,11 +40,8 @@ export function ZipRouteBooking() {
       <h2 id="zip-booking-title" className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-3">
         Primero, ingrese su código postal
       </h2>
-      <p className="text-neutral-600 leading-relaxed mb-7">
-        Cada zona tiene un día fijo de recogida. Identificaremos su ruta automáticamente
-        antes de mostrarle los horarios disponibles. Puede reservar durante el sábado
-        para una recogida el lunes, si quedan turnos disponibles; el sábado no se
-        considera un día de recogida regular.
+      <p className="text-neutral-600 leading-relaxed mb-5">
+        Cada zona tiene un día fijo de recogida. Le mostraremos su día al instante.
       </p>
 
       <label htmlFor="pickup-zip" className="block text-sm font-bold text-neutral-900 mb-2">
@@ -48,6 +59,7 @@ export function ZipRouteBooking() {
           value={zip}
           onChange={(event) => setZip(event.target.value.replace(/\D/g, "").slice(0, 5))}
           placeholder="Ej. 10704"
+          enterKeyHint="done"
           className="flex-1 min-w-0 bg-transparent text-lg text-neutral-900 outline-none"
           aria-describedby="zip-status"
         />
@@ -67,8 +79,9 @@ export function ZipRouteBooking() {
                 </p>
                 <a
                   href={bookingUrlForRoute(route, zip)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  data-cta="zip_booking"
+                  data-zip={zip}
+                  data-route={route.spanishDay}
                   onClick={() => {
                     trackMetaEvent("Lead", {
                       content_name: `Reserva Recogida - Ruta ${route.spanishDay}`,
@@ -110,6 +123,10 @@ export function ZipRouteBooking() {
       </div>
 
       <p className="text-xs text-neutral-500 mt-6 leading-relaxed">
+        Puede reservar durante el sábado para una recogida el lunes, si quedan turnos
+        disponibles; el sábado no se considera un día de recogida regular.
+      </p>
+      <p className="text-xs text-neutral-500 mt-2 leading-relaxed">
         Revise que el ZIP de la dirección ingresada en Acuity sea el mismo. Si necesita
         cambiar la dirección o el ZIP, vuelva a consultar la ruta antes de confirmar y pagar.
       </p>
