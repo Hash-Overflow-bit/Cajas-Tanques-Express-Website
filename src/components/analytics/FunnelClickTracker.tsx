@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { siteConfig } from "@/config/site";
 import { trackEvent, type FunnelEvent } from "@/lib/analytics";
+import { trackMetaEvent } from "@/lib/metaPixel";
 
 /**
  * One delegated listener for every booking-funnel link on the site, so new
@@ -50,6 +51,15 @@ export function FunnelClickTracker() {
         ...(link.dataset.zip ? { pickup_zip: link.dataset.zip } : {}),
         ...(link.dataset.route ? { pickup_route: link.dataset.route } : {}),
       });
+
+      // Calls and WhatsApp chats are real leads for this business, so Meta
+      // should see them too. Acuity clicks already send InitiateCheckout.
+      if (name === "call_click" || name === "whatsapp_click") {
+        trackMetaEvent("Contact", {
+          content_name: name === "call_click" ? "Phone" : "WhatsApp",
+          content_category: ctaLocation,
+        });
+      }
     };
 
     document.addEventListener("click", onClick, { capture: true });

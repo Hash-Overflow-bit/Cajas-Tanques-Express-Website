@@ -29,6 +29,11 @@ export function ZipRouteBooking() {
       route_found: Boolean(route),
       ...(route ? { pickup_route: route.spanishDay } : {}),
     });
+    trackMetaEvent("FindLocation", {
+      postal_code: zip,
+      content_category: route ? "Route found" : "Outside coverage",
+      ...(route ? { content_name: `Ruta ${route.spanishDay}` } : {}),
+    });
   }, [complete, zip, route]);
 
   return (
