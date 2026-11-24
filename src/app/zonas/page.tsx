@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PICKUP_ROUTES } from "@/lib/pickupRoutes";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs, PageHeader, Section, BookCta } from "@/components/seo/SeoBlocks";
-import { TOWN_PAGES, routeTowns, capitalize } from "@/content/zones";
+import { TOWN_PAGES, routeTowns, townLabel, capitalize } from "@/content/zones";
 import { breadcrumbSchema } from "@/lib/structuredData";
 
 const PATH = "/zonas";
@@ -41,7 +41,7 @@ export default function ZonasPage() {
                   className="block rounded-2xl border border-neutral-200 bg-white p-4 hover:border-brand-900"
                 >
                   <span className="font-semibold text-neutral-900">
-                    Envío de cajas desde {t.name}, {t.state}
+                    Envío de cajas desde {townLabel(t)}
                   </span>
                   <span className="block text-sm text-neutral-500">ZIP {t.zips.join(", ")}</span>
                 </Link>

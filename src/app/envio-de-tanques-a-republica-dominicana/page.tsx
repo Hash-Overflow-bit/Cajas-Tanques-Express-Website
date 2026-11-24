@@ -15,7 +15,7 @@ const DESCRIPTION =
   "Envío de tanques (barriles) de 55 y 75 galones puerta a puerta a República Dominicana. Recogida a domicilio en Yonkers, Westchester, el Bronx y Connecticut. Reserve con $10.";
 
 export const metadata: Metadata = {
-  title: `${TITLE} | Tanques de 55 y 75 Galones`,
+  title: `Envío de Cajas y Tanques a República Dominicana: Precios de Tanques`,
   description: DESCRIPTION,
   alternates: { canonical: PATH },
 };
@@ -72,7 +72,7 @@ export default function EnvioTanquesPage() {
         <Breadcrumbs items={CRUMBS} />
         <PageHeader
           eyebrow="Tanques y barriles"
-          title="Envío de tanques a República Dominicana desde Yonkers, Westchester y Connecticut"
+          title="Envío de tanques a República Dominicana desde New York y Connecticut"
           lead="Tanques de 55 y 75 galones con cierre hermético para víveres, aceite y artículos pesados. Los recogemos en su casa y los entregamos puerta a puerta en toda la República Dominicana."
         />
 

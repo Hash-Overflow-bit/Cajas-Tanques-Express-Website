@@ -12,7 +12,7 @@ import { CoverageSection } from "@/components/home/CoverageSection";
 import { HomeFAQ } from "@/components/home/HomeFAQ";
 
 export const metadata: Metadata = {
-  title: { absolute: "Envío de Cajas y Tanques a República Dominicana | Yonkers, Westchester y CT" },
+  title: { absolute: "Envío de Cajas y Tanques a República Dominicana desde New York y Connecticut" },
   alternates: { canonical: "/" },
 };
 

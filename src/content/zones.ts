@@ -59,6 +59,8 @@ export interface TownPage {
   state: "NY" | "CT";
   region: string;
   zips: string[];
+  /** Shown instead of "Name, ST" (e.g. a whole state). */
+  label?: string;
   /** Two short, town-specific paragraphs. Keep them factual. */
   intro: string[];
   /** Other served towns worth linking from this page. */
@@ -162,7 +164,24 @@ export const TOWN_PAGES: TownPage[] = [
     ],
     nearby: ["stamford-ct", "norwalk-ct", "white-plains"],
   },
+  {
+    slug: "connecticut",
+    name: "Connecticut",
+    state: "CT",
+    label: "Connecticut",
+    region: "sur de Connecticut (condado de Fairfield)",
+    zips: ["06830", "06831", "06901", "06902", "06903", "06905", "06906", "06907", "06820", "06840", "06850", "06851", "06854"],
+    intro: [
+      "Recogemos cajas y tanques a domicilio en el sur de Connecticut (Greenwich, Stamford, Darien, New Canaan y Norwalk) y los enviamos puerta a puerta a cualquier provincia de la República Dominicana.",
+      "Todo el sur de Connecticut está en la ruta del miércoles. Ingrese su ZIP al reservar para confirmar que su dirección está en la ruta.",
+    ],
+    nearby: ["stamford-ct", "greenwich-ct", "norwalk-ct"],
+  },
 ];
+
+export function townLabel(t: TownPage): string {
+  return t.label ?? `${t.name}, ${t.state}`;
+}
 
 export function routeForZip(zip: string): PickupRoute | undefined {
   return PICKUP_ROUTES.find((r) => r.zips.includes(zip));

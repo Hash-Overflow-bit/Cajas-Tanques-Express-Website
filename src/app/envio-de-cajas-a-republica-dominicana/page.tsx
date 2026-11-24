@@ -15,7 +15,7 @@ const DESCRIPTION =
   "Envío de cajas puerta a puerta a República Dominicana desde Yonkers, Westchester, el Bronx y Connecticut. Caja 18x18x28 desde $75. Recogida a domicilio y reserva con $10.";
 
 export const metadata: Metadata = {
-  title: `${TITLE} desde $75 | Recogida en NY y CT`,
+  title: `${TITLE} desde New York y Connecticut | Desde $75`,
   description: DESCRIPTION,
   alternates: { canonical: PATH },
 };
@@ -71,8 +71,8 @@ export default function EnvioCajasPage() {
         <Breadcrumbs items={CRUMBS} />
         <PageHeader
           eyebrow="Cajas puerta a puerta"
-          title="Envío de cajas a República Dominicana desde Yonkers, Westchester y Connecticut"
-          lead="Recogemos sus cajas en la puerta de su casa y las entregamos en la puerta de su familia en cualquier provincia de República Dominicana. Reserve en línea con un depósito de $10."
+          title="Envío de cajas a República Dominicana desde New York y Connecticut"
+          lead="Agencia de envíos a RD con recogida en su casa en Yonkers, Westchester, el Bronx (10460) y el sur de Connecticut. Entregamos sus cajas en la puerta de su familia en cualquier provincia de República Dominicana. Reserve en línea con un depósito de $10."
         />
 
         <Section title="Precios de cajas a República Dominicana">

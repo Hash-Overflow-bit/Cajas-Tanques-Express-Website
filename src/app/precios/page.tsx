@@ -69,6 +69,49 @@ export default function PreciosPage() {
           lead="Precio fijo por caja o tanque, puerta a puerta, con recogida en su casa. Reserve con $10 de depósito, que se descuenta del total."
         />
 
+        <Section title="¿Cuánto cuesta enviar una caja a República Dominicana?">
+          <p>
+            Enviar una caja estándar de 18 x 18 x 28 pulgadas desde New York o Connecticut a República Dominicana cuesta{" "}
+            <strong>${boxPricing[0].price}</strong>, puerta a puerta. Las cajas más grandes cuestan de ${boxPricing[1].price} a $
+            {boxPricing[boxPricing.length - 1].price}, y los tanques ${tankPricing[0].price.toFixed(2)} (55 galones) y $
+            {tankPricing[1].price.toFixed(2)} (75 galones). El precio incluye la recogida en su casa.
+          </p>
+        </Section>
+
+        <Section title="Tamaño de cajas para envíos a República Dominicana">
+          <div className="overflow-x-auto rounded-2xl border border-neutral-200 bg-white">
+            <table className="w-full text-left text-sm">
+              <caption className="sr-only">Comparación de tamaños de cajas</caption>
+              <thead className="bg-canvas text-xs uppercase tracking-wider text-neutral-500">
+                <tr>
+                  <th scope="col" className="px-4 py-3">Caja</th>
+                  <th scope="col" className="px-4 py-3">Medida (pulgadas)</th>
+                  <th scope="col" className="px-4 py-3 text-right">Capacidad aprox.</th>
+                  <th scope="col" className="px-4 py-3">Ideal para</th>
+                </tr>
+              </thead>
+              <tbody>
+                {boxPricing.map((b) => {
+                  const [l, w, h] = (b.size.match(/\d+/g) ?? []).map(Number);
+                  const cuft = (l * w * h) / 1728;
+                  return (
+                    <tr key={b.id} className="border-t border-neutral-100 align-top">
+                      <th scope="row" className="px-4 py-3 font-semibold text-neutral-900">{b.name}</th>
+                      <td className="px-4 py-3 font-mono text-xs">{b.size}</td>
+                      <td className="px-4 py-3 text-right tabular-nums">{cuft.toFixed(1)} pies³</td>
+                      <td className="px-4 py-3 text-neutral-700">{b.idealFor}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm">
+            ¿No sabe qué tamaño necesita? Lea la guía{" "}
+            <Link href="/guias/como-enviar-cajas-a-republica-dominicana" className="underline">cómo enviar cajas a República Dominicana</Link>.
+          </p>
+        </Section>
+
         <Section title="Cajas">
           <PriceTable
             caption="Precios de cajas"
