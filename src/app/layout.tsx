@@ -8,6 +8,7 @@ import { FunnelClickTracker } from "@/components/analytics/FunnelClickTracker";
 import { MobileStickyBar } from "@/components/ui/MobileStickyBar";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { localBusinessSchema } from "@/lib/structuredData";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -97,6 +98,7 @@ gtag('js', new Date());`}
         <Footer />
         <MobileStickyBar />
         <FunnelClickTracker />
+        <Analytics />
       </body>
     </html>
   );
