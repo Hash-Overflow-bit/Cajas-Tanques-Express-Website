@@ -91,24 +91,28 @@ export const Footer: React.FC = () => {
             
             {/* Social Icons with SVG / Lucide icons */}
             <div className="flex items-center gap-4 text-white/80">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-cyan-300 transition-all flex items-center justify-center text-white"
-                aria-label="Facebook"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-cyan-300 transition-all flex items-center justify-center text-white"
-                aria-label="Instagram"
-              >
-                <Instagram size={18} />
-              </a>
+              {siteConfig.social.facebook && (
+                <a
+                  href={siteConfig.social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-cyan-300 transition-all flex items-center justify-center text-white"
+                  aria-label="Facebook"
+                >
+                  <Facebook size={18} />
+                </a>
+              )}
+              {siteConfig.social.instagram && (
+                <a
+                  href={siteConfig.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 hover:text-cyan-300 transition-all flex items-center justify-center text-white"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={18} />
+                </a>
+              )}
               <a
                 href={`https://wa.me/${siteConfig.contact.whatsappNumber}`}
                 target="_blank"
@@ -147,8 +151,11 @@ export const Footer: React.FC = () => {
               <Link href="/zonas" className="hover:text-white transition-colors">
                 Zonas
               </Link>
-              <Link href="/#faq" className="hover:text-white transition-colors">
-                FAQ
+              <Link href="/guias" className="hover:text-white transition-colors">
+                Guías
+              </Link>
+              <Link href="/preguntas-frecuentes" className="hover:text-white transition-colors">
+                Preguntas frecuentes
               </Link>
               <Link href="/contacto" className="hover:text-white transition-colors">
                 Contacto

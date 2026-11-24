@@ -126,7 +126,7 @@ export default async function TownPage({ params }: Props) {
               {nearby.map((t, i) => (
                 <span key={t.slug}>
                   <Link href={`/zonas/${t.slug}`} className="underline">{t.name}, {t.state}</Link>
-                  {i < nearby.length - 1 ? " y " : ""}
+                  {i < nearby.length - 2 ? ", " : i === nearby.length - 2 ? " y " : ""}
                 </span>
               ))}
               . Vea <Link href="/zonas" className="underline">todas las zonas y días</Link>.

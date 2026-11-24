@@ -49,10 +49,8 @@ export const siteConfig: SiteConfig = {
     address: "25 Saw Mill River Road Yonkers NY",
     hours: "Lunes a Viernes: 8:00 AM - 6:00 PM · Sábado: 8:00 AM - 12:00 PM",
   },
-  social: {
-    facebook: "https://facebook.com/CajasTanquesExpress",
-    instagram: "https://instagram.com",
-  },
+  // Add the real profile URLs here; an icon only shows in the footer when its URL is set.
+  social: {},
   metrics: {
     deliveredCount: "10,000+ Cajas y Tanques",
     rating: "4.9 / 5.0",

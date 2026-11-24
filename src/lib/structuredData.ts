@@ -107,3 +107,20 @@ export function serviceSchema(opts: {
     })),
   };
 }
+
+/** A how-to or help article published by the business. */
+export function articleSchema(opts: { headline: string; path: string; description: string; datePublished: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: opts.headline,
+    description: opts.description,
+    url: `${siteConfig.url}${opts.path}`,
+    mainEntityOfPage: `${siteConfig.url}${opts.path}`,
+    inLanguage: "es",
+    datePublished: opts.datePublished,
+    image: `${siteConfig.url}/opengraph-image`,
+    author: { "@id": `${siteConfig.url}/#business` },
+    publisher: { "@id": `${siteConfig.url}/#business` },
+  };
+}
