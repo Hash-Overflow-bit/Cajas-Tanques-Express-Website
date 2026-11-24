@@ -87,11 +87,10 @@ export const Navbar: React.FC = () => {
       <nav className="w-full px-5 sm:px-8 lg:px-12 py-3 sm:py-4 flex items-center justify-between">
         
         {/* Full Extreme Left Side: Logo */}
-        <Link href="/" className="flex items-center group flex-shrink-0" aria-label="Inicio">
+        <Link href="/" className="flex items-center group flex-shrink-0" aria-label="Cajas & Tanques Express - Inicio">
           <Image
             src="/cajas-tanques-express-logo-transparent.png"
-            alt=""
-            aria-hidden="true"
+            alt="Cajas & Tanques Express"
             width={96}
             height={96}
             priority
