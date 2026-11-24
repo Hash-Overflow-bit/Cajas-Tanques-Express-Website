@@ -7,6 +7,13 @@ export interface Guide {
 
 export const GUIDES: Guide[] = [
   {
+    slug: "como-enviar-cajas-a-republica-dominicana",
+    title: "Cómo enviar cajas a República Dominicana desde Estados Unidos",
+    description:
+      "Paso a paso para mandar cajas y tanques a RD desde New York y Connecticut: tamaños, empaque, qué no enviar, precios y cómo reservar la recogida.",
+    datePublished: "2026-11-25",
+  },
+  {
     slug: "como-empacar-cajas-y-tanques",
     title: "Cómo empacar cajas y tanques para enviar a República Dominicana",
     description:

@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import {
   Breadcrumbs, PageHeader, Section, PriceTable, HowItWorks, FaqList, BookCta,
 } from "@/components/seo/SeoBlocks";
-import { TOWN_PAGES, townBySlug, townDays, capitalize } from "@/content/zones";
+import { TOWN_PAGES, townBySlug, townDays, townLabel, capitalize } from "@/content/zones";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/structuredData";
 import type { FAQItem } from "@/content/homeFaqs";
 
@@ -22,8 +22,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!town) return {};
   const days = townDays(town).map((d) => d.route.spanishDay).join(" y ");
   return {
-    title: `Envío de Cajas a República Dominicana desde ${town.name}, ${town.state}`,
-    description: `Recogida de cajas y tanques a domicilio en ${town.name}, ${town.state} (${days}) con envío puerta a puerta a República Dominicana. Caja desde $75. Reserve con $10.`,
+    title: `Envío de Cajas a República Dominicana desde ${townLabel(town)}`,
+    description: `Recogida de cajas y tanques a domicilio en ${townLabel(town)} (${days}) con envío puerta a puerta a República Dominicana. Caja desde $75. Reserve con $10.`,
     alternates: { canonical: `/zonas/${town.slug}` },
   };
 }
@@ -65,10 +65,10 @@ export default async function TownPage({ params }: Props) {
       <JsonLd data={faqSchema(faqs)} />
       <JsonLd
         data={serviceSchema({
-          name: `Envío de cajas y tanques a República Dominicana desde ${town.name}, ${town.state}`,
+          name: `Envío de cajas y tanques a República Dominicana desde ${townLabel(town)}`,
           path,
           description: town.intro[0],
-          areaServed: [`${town.name}, ${town.state}`],
+          areaServed: [`${townLabel(town)}`],
           offers: [
             ...boxPricing.map((b) => ({ name: `${b.name} ${b.size}`, price: b.price })),
             ...tankPricing.map((t) => ({ name: t.name, price: t.price })),
@@ -78,8 +78,8 @@ export default async function TownPage({ params }: Props) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumbs items={crumbs} />
         <PageHeader
-          eyebrow={`${town.name}, ${town.state} · Recogida ${dayNames.join(" y ")}`}
-          title={`Envío de cajas y tanques a República Dominicana desde ${town.name}, ${town.state}`}
+          eyebrow={`${townLabel(town)} · Recogida ${dayNames.join(" y ")}`}
+          title={`Envío de cajas y tanques a República Dominicana desde ${townLabel(town)}`}
           lead={town.intro[0]}
         />
 
@@ -125,7 +125,7 @@ export default async function TownPage({ params }: Props) {
               También recogemos en{" "}
               {nearby.map((t, i) => (
                 <span key={t.slug}>
-                  <Link href={`/zonas/${t.slug}`} className="underline">{t.name}, {t.state}</Link>
+                  <Link href={`/zonas/${t.slug}`} className="underline">{townLabel(t)}</Link>
                   {i < nearby.length - 2 ? ", " : i === nearby.length - 2 ? " y " : ""}
                 </span>
               ))}

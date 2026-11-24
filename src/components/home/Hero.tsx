@@ -30,7 +30,7 @@ export const Hero: React.FC = () => {
         <div className="relative z-10 max-w-xl">
           <h1 id="hero-title" className="text-5xl font-black leading-[0.94] tracking-[-0.055em] sm:text-7xl lg:text-[76px]">
             <span className="mb-4 block text-base font-bold leading-snug tracking-normal text-cyan-100 sm:text-lg">
-              Envío de cajas y tanques a República Dominicana desde Yonkers, Westchester y Connecticut
+              Envío de cajas y tanques a República Dominicana desde New York y Connecticut
             </span>
             <span className="block">CAJAS &amp; TANQUES</span>
             <span className="block bg-gradient-to-r from-cyan-200 via-sky-300 to-blue-400 bg-clip-text text-transparent">EXPRESS</span>
