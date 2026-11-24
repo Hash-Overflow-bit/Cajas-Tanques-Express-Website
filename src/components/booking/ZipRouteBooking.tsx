@@ -83,7 +83,7 @@ export function ZipRouteBooking() {
                   data-zip={zip}
                   data-route={route.spanishDay}
                   onClick={() => {
-                    trackMetaEvent("Lead", {
+                    trackMetaEvent("InitiateCheckout", {
                       content_name: `Reserva Recogida - Ruta ${route.spanishDay}`,
                       content_category: "Pickup Booking",
                       value: 10.0,
