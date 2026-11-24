@@ -45,7 +45,7 @@ export const siteConfig: SiteConfig = {
     phoneSecondaryRaw: "+16466529547",
     whatsappNumber: "16466529547",
     whatsappDisplay: "(646) 652-9547",
-    email: "inf@cajasytanquesexpress.com",
+    email: "info@cajasytanquesexpress.com",
     address: "25 Saw Mill River Road Yonkers NY",
     hours: "Lunes a Viernes: 8:00 AM - 6:00 PM · Sábado: 8:00 AM - 12:00 PM",
   },
