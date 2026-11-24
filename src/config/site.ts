@@ -64,9 +64,9 @@ export const siteConfig: SiteConfig = {
 export const navigationLinks = [
   { name: "Inicio", href: "/" },
   { name: "Servicios", href: "/#servicios" },
-  { name: "Precios y Medidas", href: "/#precios" },
+  { name: "Precios", href: "/precios" },
   { name: "Cómo Funciona", href: "/#como-funciona" },
-  { name: "Zonas de Cobertura", href: "/#zonas" },
+  { name: "Zonas de Recogida", href: "/zonas" },
   { name: "Contacto", href: "/contacto" },
 ];
 

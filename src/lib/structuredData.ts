@@ -68,3 +68,42 @@ export function faqSchema(faqs: FAQItem[]) {
     })),
   };
 }
+
+export function breadcrumbSchema(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: `${siteConfig.url}${item.path === "/" ? "" : item.path}`,
+    })),
+  };
+}
+
+/** A shipping service with its price list, tied to the business entity. */
+export function serviceSchema(opts: {
+  name: string;
+  path: string;
+  description: string;
+  areaServed?: string[];
+  offers: { name: string; price: number }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: opts.name,
+    serviceType: "Envío puerta a puerta a República Dominicana",
+    description: opts.description,
+    url: `${siteConfig.url}${opts.path}`,
+    provider: { "@id": `${siteConfig.url}/#business` },
+    areaServed: (opts.areaServed ?? SERVED_AREAS).map((name) => ({ "@type": "City", name })),
+    offers: opts.offers.map((o) => ({
+      "@type": "Offer",
+      name: o.name,
+      price: o.price.toFixed(2),
+      priceCurrency: "USD",
+    })),
+  };
+}
