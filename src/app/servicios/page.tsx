@@ -1,21 +1,34 @@
 import React from "react";
 import type { Metadata } from "next";
 import { boxPricing, siteConfig, tankPricing } from "@/config/site";
+import Link from "next/link";
 import { PillButton } from "@/components/ui/PillButton";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { Breadcrumbs } from "@/components/seo/SeoBlocks";
+import { TOWN_PAGES } from "@/content/zones";
+import { GUIDES } from "@/content/guides";
+import { breadcrumbSchema } from "@/lib/structuredData";
 import { Box, Cylinder, CheckCircle2, AlertTriangle, ShieldCheck, HelpCircle } from "lucide-react";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/servicios" },
   title: "Envío de Cajas y Tanques a República Dominicana",
   description:
-    "Conozca nuestros servicios de envío de cajas y tanques hacia toda la República Dominicana. Medidas, recomendaciones de embalaje y recogida a domicilio.",
+    "Servicios de envío de cajas y tanques puerta a puerta a República Dominicana con recogida a domicilio en Westchester, el Bronx y Connecticut. Medidas, precios y empaque.",
 };
+
+const CRUMBS = [
+  { name: "Inicio", path: "/" },
+  { name: "Servicios", path: "/servicios" },
+];
 
 export default function ServiciosPage() {
   return (
     <div className="pt-32 sm:pt-40 pb-16 sm:pb-20">
+      <JsonLd data={breadcrumbSchema(CRUMBS)} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+        <Breadcrumbs items={CRUMBS} />
+
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-900 bg-brand-100/70 px-3.5 py-1.5 rounded-full inline-block mb-3">
@@ -49,7 +62,11 @@ export default function ServiciosPage() {
                 </div>
 
                 <p className="text-neutral-600 text-sm sm:text-base leading-relaxed mb-6">
-                  Nuestras cajas para exportación cuentan con cartón reforzado de doble pared diseñado para soportar el apilamiento y trayecto marítimo internacional. Pasamos a recoger directamente a su casa en el horario programado.
+                  Nuestras cajas para exportación cuentan con cartón reforzado de doble pared diseñado para soportar el apilamiento y trayecto marítimo internacional. Pasamos a recoger directamente a su casa en el horario programado.{" "}
+                  <Link href="/envio-de-cajas-a-republica-dominicana" className="underline text-brand-900">
+                    Más sobre el envío de cajas
+                  </Link>
+                  .
                 </p>
 
                 <h3 className="font-bold text-neutral-900 text-base mb-3">
@@ -71,8 +88,7 @@ export default function ServiciosPage() {
                 </ul>
 
                 <PillButton
-                  href={siteConfig.acuityBookingUrl}
-                  isExternal
+                  href={siteConfig.bookingEntryUrl}
                   size="md"
                   variant="primary"
                 >
@@ -137,7 +153,11 @@ export default function ServiciosPage() {
                 </div>
 
                 <p className="text-neutral-600 text-sm sm:text-base leading-relaxed mb-6">
-                  Los tanques cilíndricos de plástico o cartón prensado con aro metálico son la solución predilecta de la comunidad para enviar víveres voluminosos, aceites, arroz, detergentes y electrodomésticos protegidos de la humedad.
+                  Los tanques cilíndricos de plástico o cartón prensado con aro metálico son la solución predilecta de la comunidad para enviar víveres voluminosos, aceites, arroz, detergentes y electrodomésticos protegidos de la humedad.{" "}
+                  <Link href="/envio-de-tanques-a-republica-dominicana" className="underline text-brand-900">
+                    Más sobre el envío de tanques
+                  </Link>
+                  .
                 </p>
 
                 <h3 className="font-bold text-neutral-900 text-base mb-3">
@@ -159,8 +179,7 @@ export default function ServiciosPage() {
                 </ul>
 
                 <PillButton
-                  href={siteConfig.acuityBookingUrl}
-                  isExternal
+                  href={siteConfig.bookingEntryUrl}
                   size="md"
                   variant="primary"
                 >
@@ -236,8 +255,7 @@ export default function ServiciosPage() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <PillButton
-                  href={siteConfig.acuityBookingUrl}
-                  isExternal
+                  href={siteConfig.bookingEntryUrl}
                   size="md"
                   variant="white"
                 >
@@ -253,6 +271,45 @@ export default function ServiciosPage() {
                 </PillButton>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Section: Zones and guides (internal links) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-20">
+          <div className="bg-white rounded-3xl p-8 border border-neutral-200/80">
+            <h2 className="text-2xl font-bold text-neutral-900 mb-3">Recogida a domicilio por zona</h2>
+            <p className="text-sm text-neutral-600 mb-4">
+              Cada zona tiene un día fijo de recogida según su código postal. Vea su día en{" "}
+              <Link href="/zonas" className="underline text-brand-900">zonas de recogida</Link> o en su ciudad:
+            </p>
+            <ul className="flex flex-wrap gap-2">
+              {TOWN_PAGES.map((t) => (
+                <li key={t.slug}>
+                  <Link
+                    href={`/zonas/${t.slug}`}
+                    className="inline-block rounded-full border border-neutral-200 px-3 py-1.5 text-sm text-neutral-800 hover:border-brand-900"
+                  >
+                    {t.name}, {t.state}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-white rounded-3xl p-8 border border-neutral-200/80">
+            <h2 className="text-2xl font-bold text-neutral-900 mb-3">Guías y ayuda</h2>
+            <ul className="space-y-3 text-sm">
+              {GUIDES.map((g) => (
+                <li key={g.slug}>
+                  <Link href={`/guias/${g.slug}`} className="underline text-brand-900">{g.title}</Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/precios" className="underline text-brand-900">Precios de cajas, tanques y materiales</Link>
+              </li>
+              <li>
+                <Link href="/preguntas-frecuentes" className="underline text-brand-900">Preguntas frecuentes</Link>
+              </li>
+            </ul>
           </div>
         </div>
 

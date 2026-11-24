@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import { ZipRouteBooking } from "@/components/booking/ZipRouteBooking";
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { PICKUP_ROUTES } from "@/lib/pickupRoutes";
+import { TOWN_PAGES, routeTowns, capitalize } from "@/content/zones";
 import { CalendarCheck, CreditCard, Clock, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/reservar" },
   title: "Reservar Recogida de Cajas y Tanques por ZIP",
-  description: "Ingrese su código postal para encontrar el día correcto de recogida de cajas y tanques. Reserve su turno en Acuity con $10 de depósito seguro.",
+  description:
+    "Reserve la recogida de sus cajas y tanques a República Dominicana. Ingrese su ZIP, vea el día de su zona en Westchester, el Bronx o Connecticut y confirme con $10.",
 };
 
 export default function ReservarPage() {
@@ -54,6 +58,64 @@ export default function ReservarPage() {
             ))}
           </div>
         </div>
+        <section className="mb-10">
+          <h2 className="text-xl font-bold text-neutral-900 mb-2">Días de recogida por zona</h2>
+          <p className="text-sm text-neutral-600 mb-5">
+            Cada ruta tiene un día fijo. Su ZIP decide el día; el formulario de arriba lo encuentra por usted.
+          </p>
+          <div className="overflow-x-auto rounded-2xl border border-neutral-200 bg-white">
+            <table className="w-full text-left text-sm">
+              <caption className="sr-only">Días de recogida por zona</caption>
+              <thead className="bg-canvas text-xs uppercase tracking-wider text-neutral-500">
+                <tr>
+                  <th scope="col" className="px-4 py-3">Día</th>
+                  <th scope="col" className="px-4 py-3">Zonas</th>
+                </tr>
+              </thead>
+              <tbody>
+                {PICKUP_ROUTES.map((r) => (
+                  <tr key={r.day} className="border-t border-neutral-100">
+                    <th scope="row" className="px-4 py-3 font-semibold text-neutral-900 whitespace-nowrap">
+                      {capitalize(r.spanishDay)}
+                    </th>
+                    <td className="px-4 py-3 text-neutral-700">{routeTowns(r).join(", ")}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-neutral-600 mt-4">
+            Vea más detalles de su ciudad:{" "}
+            {TOWN_PAGES.map((t, i) => (
+              <span key={t.slug}>
+                <Link href={`/zonas/${t.slug}`} className="underline text-brand-900">{t.name}</Link>
+                {i < TOWN_PAGES.length - 1 ? ", " : "."}
+              </span>
+            ))}
+          </p>
+        </section>
+
+        <section className="mb-10 rounded-3xl border border-neutral-200 bg-white p-7 sm:p-8">
+          <h2 className="text-xl font-bold text-neutral-900 mb-3">Antes de su recogida</h2>
+          <ul className="space-y-2 text-sm text-neutral-700 list-disc pl-5">
+            <li>
+              Tenga sus cajas selladas y sus tanques con el aro apretado. Vea{" "}
+              <Link href="/guias/como-empacar-cajas-y-tanques" className="underline text-brand-900">cómo empacar</Link>.
+            </li>
+            <li>
+              Revise la lista de{" "}
+              <Link href="/guias/articulos-prohibidos" className="underline text-brand-900">artículos prohibidos</Link>.
+            </li>
+            <li>
+              Escriba el nombre, teléfono y dirección de quien recibe en República Dominicana.
+            </li>
+            <li>
+              Consulte los <Link href="/precios" className="underline text-brand-900">precios</Link>: el saldo se paga al
+              recoger y los $10 del depósito se descuentan.
+            </li>
+          </ul>
+        </section>
+
         <p className="text-center text-sm text-neutral-600">
           ¿Necesita ayuda? Llámenos al{" "}
           <a className="font-bold underline text-brand-900" href={`tel:${siteConfig.contact.phoneRaw}`}>{siteConfig.contact.phoneDisplay}</a>

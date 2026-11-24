@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { TOWN_PAGES } from "@/content/zones";
+import { GUIDES } from "@/content/guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
@@ -19,6 +20,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page("/reservar", 0.9, "weekly"),
     page("/zonas", 0.8, "monthly"),
     ...TOWN_PAGES.map((t) => page(`/zonas/${t.slug}`, 0.8, "monthly")),
+    page("/preguntas-frecuentes", 0.7, "monthly"),
+    page("/guias", 0.6, "monthly"),
+    ...GUIDES.map((g) => page(`/guias/${g.slug}`, 0.6, "monthly")),
     page("/servicios", 0.7, "monthly"),
     page("/contacto", 0.7, "monthly"),
     page("/privacidad", 0.3, "yearly"),
