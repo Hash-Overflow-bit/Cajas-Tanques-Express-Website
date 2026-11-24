@@ -67,7 +67,7 @@ export default function ZonasPage() {
                     <th scope="row" className="px-4 py-3 font-semibold text-brand-900">{capitalize(r.spanishDay)}</th>
                     <td className="px-4 py-3 text-neutral-800">{routeTowns(r).join(", ")}</td>
                     <td className="px-4 py-3 font-mono text-xs text-neutral-600">
-                      {r.zips.map((z) => `${z} (${ZIP_TOWNS[z] ?? "—"})`).join(" · ")}
+                      {r.zips.join(", ")}
                     </td>
                   </tr>
                 ))}
