@@ -5,7 +5,8 @@ import { siteConfig } from "@/config/site";
 import { FileText, DollarSign, Clock, ShieldAlert, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: `Términos y Condiciones del Servicio | ${siteConfig.legalBusinessName}`,
+  alternates: { canonical: "/terminos" },
+  title: "Términos y Condiciones del Servicio",
   description:
     "Términos del servicio de recogida, política del depósito de $10, cancelaciones, responsabilidades de embalaje y condiciones de envío a República Dominicana.",
 };

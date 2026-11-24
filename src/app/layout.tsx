@@ -6,8 +6,11 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FunnelClickTracker } from "@/components/analytics/FunnelClickTracker";
 import { MobileStickyBar } from "@/components/ui/MobileStickyBar";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { localBusinessSchema } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.name} | ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
@@ -31,8 +34,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "es_DO",
-    url: siteConfig.url,
+    locale: "es_US",
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
@@ -89,6 +91,7 @@ fbq('track', 'PageView');`,
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());`}
         </Script>
+        <JsonLd data={localBusinessSchema()} />
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

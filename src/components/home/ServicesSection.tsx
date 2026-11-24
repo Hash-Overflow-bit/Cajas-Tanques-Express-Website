@@ -34,7 +34,7 @@ export const ServicesSection: React.FC = () => {
               </h3>
             </div>
             <p className="text-sm text-neutral-600 max-w-md sm:text-right">
-              Recogida a domicilio en NY, Westchester, CT y NJ. Depósito de solo $10 aplicado al total.
+              Recogida a domicilio en NY, Westchester y Connecticut. Depósito de solo $10 aplicado al total.
             </p>
           </div>
 

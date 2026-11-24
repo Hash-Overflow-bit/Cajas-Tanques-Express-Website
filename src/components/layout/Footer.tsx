@@ -24,8 +24,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-4 sm:gap-6 mb-6">
               <Image
                 src="/cajas-tanques-express-logo-transparent.png"
-                alt=""
-                aria-hidden="true"
+                alt="Cajas & Tanques Express"
                 width={120}
                 height={120}
                 className="w-20 sm:w-24 h-auto object-contain flex-shrink-0"

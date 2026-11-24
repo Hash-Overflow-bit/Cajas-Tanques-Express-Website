@@ -34,8 +34,8 @@ export const siteConfig: SiteConfig = {
   legalBusinessName: "CAJAS & TANQUES EXPRESS LLC",
   tagline: "¡Envíos Puerta a Puerta a la República Dominicana! 🇩🇴",
   description:
-    "Servicio profesional de recogida a domicilio (NY, Westchester, CT, NJ) y transporte seguro de cajas y tanques hacia toda la República Dominicana. Reserva en línea con solo $10 de depósito.",
-  url: "https://cajasytanquesexpress.com",
+    "Servicio profesional de recogida a domicilio (Yonkers, Westchester, el Bronx y Connecticut) y transporte seguro de cajas y tanques hacia toda la República Dominicana. Reserva en línea con solo $10 de depósito.",
+  url: "https://www.cajasytanquesexpress.com",
   acuityBookingUrl: "https://CajasYtanquesExpress.as.me/",
   bookingEntryUrl: "/reservar",
   contact: {

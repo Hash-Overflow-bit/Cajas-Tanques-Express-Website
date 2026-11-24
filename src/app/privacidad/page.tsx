@@ -4,7 +4,8 @@ import { siteConfig } from "@/config/site";
 import { ShieldCheck, Lock, Smartphone, FileText, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: `Política de Privacidad y Consentimiento SMS | ${siteConfig.legalBusinessName}`,
+  alternates: { canonical: "/privacidad" },
+  title: "Política de Privacidad y Consentimiento SMS",
   description:
     "Conozca cómo protegemos su información personal, el uso de datos en reservas de recogida y el consentimiento de comunicaciones por SMS.",
 };

@@ -5,7 +5,8 @@ import { PillButton } from "@/components/ui/PillButton";
 import { Box, Cylinder, CheckCircle2, AlertTriangle, ShieldCheck, HelpCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: `Nuestros Servicios | ${siteConfig.name}`,
+  alternates: { canonical: "/servicios" },
+  title: "Envío de Cajas y Tanques a República Dominicana",
   description:
     "Conozca nuestros servicios de envío de cajas y tanques hacia toda la República Dominicana. Medidas, recomendaciones de embalaje y recogida a domicilio.",
 };
@@ -105,7 +106,7 @@ export default function ServiciosPage() {
                   </div>
                   <div className="flex justify-between">
                     <span>Recogida:</span>
-                    <span>NY, Westchester, CT, NJ</span>
+                    <span>NY, Westchester y CT</span>
                   </div>
                 </div>
                 <div className="text-[11px] text-neutral-500 bg-white p-2.5 rounded-xl border border-neutral-200">
@@ -193,7 +194,7 @@ export default function ServiciosPage() {
                   </div>
                   <div className="flex justify-between">
                     <span>Recogida:</span>
-                    <span>NY, Westchester, CT, NJ</span>
+                    <span>NY, Westchester y CT</span>
                   </div>
                 </div>
                 <div className="text-[11px] text-neutral-500 bg-white p-2.5 rounded-xl border border-neutral-200">
