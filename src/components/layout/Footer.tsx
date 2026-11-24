@@ -135,7 +135,16 @@ export const Footer: React.FC = () => {
               <Link href="/#como-funciona" className="hover:text-white transition-colors">
                 Cómo Funciona
               </Link>
-              <Link href="/#zonas" className="hover:text-white transition-colors">
+              <Link href="/envio-de-cajas-a-republica-dominicana" className="hover:text-white transition-colors">
+                Envío de cajas
+              </Link>
+              <Link href="/envio-de-tanques-a-republica-dominicana" className="hover:text-white transition-colors">
+                Envío de tanques
+              </Link>
+              <Link href="/precios" className="hover:text-white transition-colors">
+                Precios
+              </Link>
+              <Link href="/zonas" className="hover:text-white transition-colors">
                 Zonas
               </Link>
               <Link href="/#faq" className="hover:text-white transition-colors">
